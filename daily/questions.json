@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "question": "Which of the following Articles of the Indian Constitution guarantees 'Equality before the law'?",
+        "options": [
+            "Article 14",
+            "Article 19",
+            "Article 21",
+            "Article 32"
+        ],
+        "answer": 0,
+        "explanation": "Article 14 states that the State shall not deny to any person equality before the law or the equal protection of the laws within the territory of India."
+    },
+    {
+        "id": 2,
+        "question": "In which landmark case did the Supreme Court establish the 'Basic Structure Doctrine'?",
+        "options": [
+            "Maneka Gandhi Case",
+            "Kesavananda Bharati Case",
+            "Golaknath Case",
+            "Minerva Mills Case"
+        ],
+        "answer": 1,
+        "explanation": "In 1973, a 13-judge bench in Kesavananda Bharati v. State of Kerala held that Parliament cannot alter the 'Basic Structure' of the Constitution."
+    }
+]
