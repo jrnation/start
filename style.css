@@ -288,20 +288,17 @@ a.hub-card:hover .card-footer svg {
     }
 }
 
-/* Desktop Layout (The 3-3-1 Structure) */
+/* Desktop Layout (The 3-3-Full Structure) */
 @media (min-width: 1080px) {
     .hub-grid {
-        grid-template-columns: repeat(3, 1fr); /* Forces 3 equal columns */
+        grid-template-columns: repeat(3, 1fr); 
     }
     
-    /* Re-constrain the quiz wrapper to match the card sizes on desktop */
+    /* Make the quiz widget span the entire width of the grid */
     .quiz-wrapper { 
-        grid-column: auto; 
-    }
-
-    /* The exact centering math for Card 7 */
-    .hub-card:nth-child(7) {
-        grid-column: 2; /* Puts the 7th card perfectly in the center column */
+        grid-column: 1 / -1; 
+        max-width: 800px; /* Prevents the text from getting too wide to read comfortably */
+        margin: 0 auto;   /* Centers the 800px container inside the full-width span */
     }
 }
 
