@@ -1,26 +1,41 @@
 [
     {
         "id": 1,
-        "question": "Which of the following Articles of the Indian Constitution guarantees 'Equality before the law'?",
+        "date": "2026-07-03", 
+        "question": "Under which Article of the Constitution of India is the power to issue writs for the enforcement of Fundamental Rights vested in the Supreme Court?",
         "options": [
             "Article 14",
-            "Article 19",
-            "Article 21",
-            "Article 32"
+            "Article 32",
+            "Article 226",
+            "Article 13"
         ],
-        "answer": 0,
-        "explanation": "Article 14 states that the State shall not deny to any person equality before the law or the equal protection of the laws within the territory of India."
+        "answer": 1, 
+        "explanation": "Article 32 gives the Supreme Court original jurisdiction to issue writs (Habeas Corpus, Mandamus, Prohibition, Certiorari, and Quo Warranto) for the enforcement of Fundamental Rights. Dr. B.R. Ambedkar called it the 'heart and soul' of the Constitution."
     },
     {
         "id": 2,
-        "question": "In which landmark case did the Supreme Court establish the 'Basic Structure Doctrine'?",
+        "date": "2026-07-04",
+        "question": "Which schedule of the Indian Constitution deals with the allocation of seats in the Rajya Sabha?",
         "options": [
-            "Maneka Gandhi Case",
-            "Kesavananda Bharati Case",
-            "Golaknath Case",
-            "Minerva Mills Case"
+            "Third Schedule",
+            "Fourth Schedule",
+            "Sixth Schedule",
+            "Tenth Schedule"
         ],
         "answer": 1,
-        "explanation": "In 1973, a 13-judge bench in Kesavananda Bharati v. State of Kerala held that Parliament cannot alter the 'Basic Structure' of the Constitution."
+        "explanation": "The Fourth Schedule contains provisions as to the allocation of seats in the Council of States (Rajya Sabha) to the States and Union Territories."
+    },
+    {
+        "id": 3,
+        "date": "2026-07-05",
+        "question": "In the context of Corporate Law, what is the maximum number of directors a public company can appoint without passing a special resolution?",
+        "options": [
+            "7",
+            "10",
+            "12",
+            "15"
+        ],
+        "answer": 3,
+        "explanation": "Under Section 149(1) of the Companies Act, 2013, a company can have a maximum of 15 directors. Appointing more than 15 requires a special resolution passed by the shareholders."
     }
 ]

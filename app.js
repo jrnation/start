@@ -1,131 +1,260 @@
+// app.js
+
+// 1. Firebase Native Browser Imports (No bundler required)
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
+import { 
+    getAuth, 
+    signInWithPopup, 
+    GoogleAuthProvider, 
+    onAuthStateChanged, 
+    signOut 
+} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+// 2. Your Firebase Configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyALDrNEDq3n0ZjKNzIMIOCN5IVB3DtisFI",
+    authDomain: "jrnation-f0956.firebaseapp.com",
+    projectId: "jrnation-f0956",
+    storageBucket: "jrnation-f0956.firebasestorage.app",
+    messagingSenderId: "466925585163",
+    appId: "1:466925585163:web:2aab30ddad83f59a48d80e",
+    measurementId: "G-Y0MQ9MVPZQ"
+};
+
+// 3. Initialize Firebase & Auth
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+
+// Global State
+let currentUser = null;
+
+// 4. Authentication Logic
 document.addEventListener('DOMContentLoaded', () => {
-    const quizApp = document.getElementById('quiz-app');
-    
-    // Guard clause: Exit if we aren't on a page with the quiz widget
-    if (!quizApp) return;
+    const loginBtn = document.getElementById('login-btn');
+    const userProfile = document.getElementById('user-profile');
+    const logoutBtn = document.getElementById('logout-btn');
 
-    // State management
-    const state = {
-        question: null,
-        selectedIndex: null,
-        isSubmitted: false
-    };
-
-    // Initialize Application
-    async function initQuiz() {
-        try {
-            // Simulated network delay for realism (remove in production)
-            const response = await fetch('/daily/questions.json');
+    // Listen for login/logout state changes
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            currentUser = user;
             
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+            // Update UI for logged-in user
+            if(loginBtn) loginBtn.style.display = 'none';
+            if(userProfile) {
+                userProfile.style.display = 'flex';
+                // Grabbing just the first name for a cleaner UI
+                const firstName = user.displayName ? user.displayName.split(' ')[0] : 'Aspirant';
+                
+                userProfile.innerHTML = `
+                    <img src="${user.photoURL}" alt="Profile" style="width:32px; height:32px; border-radius:50%; border: 2px solid var(--accent);">
+                    <span style="font-weight: 500; font-size: 0.95rem;">${firstName}</span>
+                `;
             }
+            if(logoutBtn) logoutBtn.style.display = 'block';
+
+        } else {
+            currentUser = null;
+            
+            // Update UI for logged-out user
+            if(loginBtn) loginBtn.style.display = 'block';
+            if(userProfile) userProfile.style.display = 'none';
+            if(logoutBtn) logoutBtn.style.display = 'none';
+        }
+    });
+
+    // Trigger Google Sign-In
+    loginBtn?.addEventListener('click', async () => {
+        try {
+            await signInWithPopup(auth, provider);
+        } catch (error) {
+            console.error("Authentication Error:", error.message);
+        }
+    });
+
+    // Trigger Logout
+    logoutBtn?.addEventListener('click', async () => {
+        try {
+            await signOut(auth);
+        } catch (error) {
+            console.error("Logout Error:", error);
+        }
+    });
+
+    // 5. Initialize the Quiz Widget
+    const quizApp = document.getElementById('quiz-app');
+    if (quizApp) {
+        new QuizWidget(quizApp);
+    }
+});
+
+// 6. The Interactive Quiz Class
+class QuizWidget {
+    constructor(container) {
+        this.container = container;
+        this.state = {
+            question: null,
+            selectedIndex: null,
+            isSubmitted: false
+        };
+        this.init();
+    }
+
+    async init() {
+        try {
+            // Simulated network latency for skeleton loader
+            await new Promise(resolve => setTimeout(resolve, 800));
+            
+            // Fetch questions (ensure questions.json exists at this path)
+            const response = await fetch('/daily/questions.json');
+            if (!response.ok) throw new Error('Network response was not ok');
             
             const questions = await response.json();
-            
-            // Daily randomizer
-            const randomIndex = Math.floor(Math.random() * questions.length);
-            state.question = questions[randomIndex];
-            
-            renderQuiz();
+            this.state.question = questions[Math.floor(Math.random() * questions.length)];
+            this.render();
         } catch (error) {
-            console.error('Quiz Initialization Failed:', error);
-            quizApp.innerHTML = `
-                <div style="text-align: center; color: var(--text-secondary);">
-                    <p>Unable to load today's quiz. Please refresh or try again later.</p>
+            console.error("Quiz load failed:", error);
+            this.container.innerHTML = `
+                <div style="text-align: center; padding: 2rem;">
+                    <h3 style="margin-bottom: 1rem;">System Update</h3>
+                    <p style="color: var(--text-muted);">Today's quiz is currently being updated. Please check back shortly.</p>
                 </div>
             `;
         }
     }
 
-    // Render HTML structure
-    function renderQuiz() {
-        if (!state.question) return;
-
-        const html = `
-            <div class="quiz-question">${state.question.question}</div>
-            <ul class="quiz-options" id="quiz-options" role="listbox">
-                ${state.question.options.map((opt, index) => `
-                    <li role="option" aria-selected="false" data-index="${index}">${opt}</li>
+    render() {
+        const { question } = this.state;
+        
+        this.container.innerHTML = `
+            <div class="quiz-question">${question.question}</div>
+            <ul class="quiz-options" role="listbox">
+                ${question.options.map((opt, i) => `
+                    <li role="option" aria-selected="false" data-index="${i}">${opt}</li>
                 `).join('')}
             </ul>
-            <button id="submit-btn" class="btn" style="display: none;" disabled>Submit Answer</button>
-            <div id="quiz-result" class="result-container" style="display: none;" aria-live="polite"></div>
+            <div id="auth-warning" style="display:none; color: var(--error-text); margin-bottom: 1rem; font-size: 0.9rem; text-align: center;">
+                You must sign in to submit your answer and save your score.
+            </div>
+            <button class="btn submit-btn" style="display: none;" disabled>Submit Answer</button>
+            <div class="result-container" style="display: none;" aria-live="polite"></div>
         `;
 
-        quizApp.innerHTML = html;
-        bindEvents();
+        this.bindEvents();
     }
 
-    // Event Listeners setup
-    function bindEvents() {
-        const optionsList = document.getElementById('quiz-options');
-        const options = optionsList.querySelectorAll('li');
-        const submitBtn = document.getElementById('submit-btn');
+    bindEvents() {
+        const options = this.container.querySelectorAll('li');
+        const submitBtn = this.container.querySelector('.submit-btn');
+        const authWarning = this.container.querySelector('#auth-warning');
 
-        // Handle Option Selection
-        optionsList.addEventListener('click', (e) => {
-            if (state.isSubmitted) return;
-            
-            const clickedItem = e.target.closest('li');
-            if (!clickedItem) return;
+        options.forEach(option => {
+            option.addEventListener('click', (e) => {
+                if (this.state.isSubmitted) return;
 
-            // Update UI Selection state
-            options.forEach(opt => {
-                opt.classList.remove('selected');
-                opt.setAttribute('aria-selected', 'false');
+                // Reset all
+                options.forEach(opt => {
+                    opt.classList.remove('selected');
+                    opt.setAttribute('aria-selected', 'false');
+                });
+
+                // Set active
+                const target = e.currentTarget;
+                target.classList.add('selected');
+                target.setAttribute('aria-selected', 'true');
+                this.state.selectedIndex = parseInt(target.dataset.index);
+
+                // Reveal button
+                submitBtn.style.display = 'block';
+                submitBtn.removeAttribute('disabled');
+                authWarning.style.display = 'none'; // Hide warning if they pick a new answer
             });
-            
-            clickedItem.classList.add('selected');
-            clickedItem.setAttribute('aria-selected', 'true');
-            
-            // Update Data State
-            state.selectedIndex = parseInt(clickedItem.dataset.index, 10);
-            
-            // Reveal and enable submit button
-            submitBtn.style.display = 'inline-flex';
-            submitBtn.removeAttribute('disabled');
         });
 
-        // Handle Submission
-        submitBtn.addEventListener('click', () => {
-            if (state.selectedIndex === null || state.isSubmitted) return;
+        submitBtn.addEventListener('click', async () => {
+            if (this.state.selectedIndex === null || this.state.isSubmitted) return;
             
-            state.isSubmitted = true;
+            // GATEKEEPER: Prevent submission if not logged in
+            if (!currentUser) {
+                authWarning.style.display = 'block';
+                // Shake animation or highlight the login button up top could go here
+                return;
+            }
+
+            this.state.isSubmitted = true;
             submitBtn.style.display = 'none';
-            evaluateAnswer(options);
+            this.evaluate(options);
+            
+            // Generate the secure token to send to Cloudflare Worker
+            try {
+                const token = await currentUser.getIdToken();
+                this.saveScoreToCloudflare(token, this.state.selectedIndex === this.state.question.answer);
+            } catch (error) {
+                console.error("Failed to generate auth token:", error);
+            }
         });
     }
 
-    // Business Logic: Grade the answer and update UI
-    function evaluateAnswer(optionNodes) {
-        const isCorrect = state.selectedIndex === state.question.answer;
-        const resultDiv = document.getElementById('quiz-result');
+    evaluate(options) {
+        const { selectedIndex, question } = this.state;
+        const isCorrect = selectedIndex === question.answer;
+        const resultDiv = this.container.querySelector('.result-container');
 
-        optionNodes.forEach(node => {
-            const index = parseInt(node.dataset.index, 10);
-            
-            // Lock all options to prevent further clicks
-            node.classList.add('locked');
+        options.forEach(node => {
+            const index = parseInt(node.dataset.index);
+            node.classList.add('locked'); // Prevent further clicking
 
-            // Apply validation classes instead of inline styles
-            if (index === state.question.answer) {
+            if (index === question.answer) {
                 node.classList.add('correct');
-            } else if (index === state.selectedIndex && !isCorrect) {
+            } else if (index === selectedIndex && !isCorrect) {
                 node.classList.add('incorrect');
             }
         });
 
-        // Display results
         resultDiv.style.display = 'block';
         resultDiv.innerHTML = `
             <h3 class="result-title ${isCorrect ? 'success' : 'error'}">
-                ${isCorrect ? 'Correct' : 'Incorrect'}
+                ${isCorrect ? 'Correct.' : 'Incorrect.'}
             </h3>
-            <p>${state.question.explanation}</p>
+            <p style="color: var(--text-muted);">${question.explanation}</p>
         `;
     }
 
-    // Boot the app
-    initQuiz();
-});
+    async saveScoreToCloudflare(token, isCorrect) {
+        // Prepare the payload using the current Firebase user
+        const payload = {
+            uid: currentUser.uid,
+            displayName: currentUser.displayName,
+            email: currentUser.email,
+            photoUrl: currentUser.photoURL,
+            score: isCorrect ? 1 : 0, // 1 point for correct, 0 for incorrect
+            totalQuestions: 1, // It's a daily 1-question challenge
+            date: new Date().toISOString().split('T')[0] // Gets today's date in YYYY-MM-DD
+        };
+
+        try {
+            // Using your custom Cloudflare API domain
+            const workerUrl = 'https://api.jrnation.cc/submit'; 
+            
+            const response = await fetch(workerUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}` 
+                },
+                body: JSON.stringify(payload)
+            });
+
+            if (response.ok) {
+                console.log("Score secured in Cloudflare D1 via api.jrnation.cc.");
+            } else {
+                console.error("Failed to save score.");
+            }
+        } catch (error) {
+            console.error("Network error while saving score:", error);
+        }
+    }
+}
