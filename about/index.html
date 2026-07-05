@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About JR Nation. A student-led initiative dedicated to simplifying Indian Polity, History, and Economics so everyone can understand their fundamental rights.">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf9f6">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111111">
+    <title>About Us | JR Nation</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="container site-nav">
+        <div class="logo">
+            <a href="/" aria-label="JR Nation Home">JR Nation.</a>
+        </div>
+        <nav class="nav-links" aria-label="Main Navigation" style="display: flex; align-items: center; gap: 2rem;">
+            <a href="/india/">Polity</a>
+            <a href="/history/">History</a>
+            <a href="/economics/">Economics</a>
+            <a href="/daily/">Daily Quiz</a>
+            
+            <div class="auth-controls" style="display: flex; align-items: center; gap: 1rem; margin-left: 1rem; padding-left: 1rem; border-left: 1px solid var(--border-color);">
+                <button id="login-btn" class="btn" style="padding: 0.4rem 1rem; font-size: 0.85rem; margin-top: 0;">Sign in</button>
+                <div id="user-profile" style="display: none; align-items: center; gap: 0.5rem; cursor: pointer;"></div>
+                <button id="logout-btn" style="display: none; background: transparent; border: none; font-size: 0.85rem; color: var(--text-muted); cursor: pointer; text-decoration: underline;">Logout</button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+    <main class="container" id="main-content" style="padding-top: 2rem; padding-bottom: 6rem;">
+        
+        <header class="article-header" style="text-align: left; max-width: 800px; margin: 0 auto 4rem auto;">
+            <p style="color: var(--accent); font-weight: 500; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem;">The Mission</p>
+            <h1 style="font-size: clamp(2.5rem, 5vw, 3.5rem); margin-bottom: 1.5rem;">Empowering Citizens.</h1>
+            <p class="subtitle" style="font-size: 1.2rem; line-height: 1.8;">I am a student on a mission to simplify the complexities of our legal and economic systems so that every citizen can truly understand their original rights.</p>
+        </header>
+
+        <div style="max-width: 800px; margin: 0 auto;">
+            <article style="background: var(--bg-surface); padding: 3rem; border-radius: 16px; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); font-size: 1.05rem; line-height: 1.8;">
+                
+                <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">Why I Built JR Nation</h2>
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">As a student navigating the vast syllabus of Indian Polity and Economics, I realized something important: the Constitution isn't just a textbook for exam aspirants. It is the instruction manual for our daily lives. Yet, the heavy legal jargon and complex political language often keep the general public in the dark about the very rights that protect them.</p>
+                
+                <p style="margin-bottom: 2rem; color: var(--text-muted);">I started JR Nation to bridge that gap. This is not a massive corporate coaching institute. It is a passion project built to break down complex Bare Acts, historical timelines, and economic frameworks into plain, accessible language. Whether you are preparing for a competitive exam or just want to be a more informed citizen, this platform is built for you.</p>
+
+                <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">My Commitment to Accuracy</h2>
+                <p style="margin-bottom: 1rem; color: var(--text-muted);">Even though this is a student-led initiative, accuracy and trustworthiness are my top priorities. When you are learning about your fundamental rights, there is no room for error.</p>
+                <ul style="list-style-type: disc; margin-left: 2rem; margin-bottom: 2rem; color: var(--text-muted);">
+                    <li><strong>Primary Sources:</strong> I base the Polity content directly on the official Constitution of India and actual Supreme Court rulings, ensuring the information is factual and unbiased.</li>
+                    <li><strong>Continuous Learning:</strong> As I learn and grow through my own studies, the platform grows. The roadmaps reflect the most logical, structured way to master these subjects.</li>
+                    <li><strong>Free Access to Knowledge:</strong> The core educational roadmaps and daily quizzes will always be open and accessible.</li>
+                </ul>
+
+                <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">Join the Journey</h2>
+                <p style="color: var(--text-muted);">Knowledge of your rights is the first step toward true empowerment. Try out the daily quiz, explore the subject roadmaps, and if you ever spot an area where we can improve, do not hesitate to reach out through the Contact page.</p>
+
+            </article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <nav class="footer-links" aria-label="Legal Navigation">
+                <a href="/about/">About Us</a>
+                <a href="/contact/">Contact</a>
+                <a href="/legal/privacy.html">Privacy Policy</a>
+                <a href="/legal/terms.html">Terms of Service</a>
+                <a href="/legal/disclaimer.html">Disclaimer</a>
+            </nav>
+            <p class="copyright">&copy; 2026 JR Nation. Built for clarity.</p>
+        </div>
+    </footer>
+    <script type="module" src="../app.js"></script>
+</body>
+</html>

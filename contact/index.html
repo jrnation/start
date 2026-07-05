@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact JR Nation. Get in touch with our editorial team for questions, feedback, or support.">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf9f6">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111111">
+    <title>Contact Us | JR Nation</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="container site-nav">
+        <div class="logo">
+            <a href="/" aria-label="JR Nation Home">JR Nation.</a>
+        </div>
+        <nav class="nav-links" aria-label="Main Navigation" style="display: flex; align-items: center; gap: 2rem;">
+            <a href="/india/">Polity</a>
+            <a href="/history/">History</a>
+            <a href="/economics/">Economics</a>
+            <a href="/daily/">Daily Quiz</a>
+            
+            <div class="auth-controls" style="display: flex; align-items: center; gap: 1rem; margin-left: 1rem; padding-left: 1rem; border-left: 1px solid var(--border-color);">
+                <button id="login-btn" class="btn" style="padding: 0.4rem 1rem; font-size: 0.85rem; margin-top: 0;">Sign in</button>
+                <div id="user-profile" style="display: none; align-items: center; gap: 0.5rem; cursor: pointer;"></div>
+                <button id="logout-btn" style="display: none; background: transparent; border: none; font-size: 0.85rem; color: var(--text-muted); cursor: pointer; text-decoration: underline;">Logout</button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+    <main class="container" id="main-content" style="padding-top: 2rem; padding-bottom: 6rem;">
+        
+        <header class="article-header" style="text-align: left; max-width: 800px; margin: 0 auto 4rem auto;">
+            <p style="color: var(--accent); font-weight: 500; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem;">Get in Touch</p>
+            <h1 style="font-size: clamp(2.5rem, 5vw, 3.5rem); margin-bottom: 1.5rem;">Contact the Team</h1>
+            <p class="subtitle" style="font-size: 1.1rem;">Have a question about a roadmap? Found a typo in a quiz? Let us know.</p>
+        </header>
+
+        <div style="max-width: 800px; margin: 0 auto;">
+            <article style="background: var(--bg-surface); padding: 3rem; border-radius: 16px; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
+                
+                <form action="#" method="POST" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <label for="name" style="font-weight: 500; font-size: 0.95rem;">Full Name</label>
+                            <input type="text" id="name" name="name" required style="padding: 0.75rem 1rem; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-base); color: var(--text-main); font-family: inherit;">
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <label for="email" style="font-weight: 500; font-size: 0.95rem;">Email Address</label>
+                            <input type="email" id="email" name="email" required style="padding: 0.75rem 1rem; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-base); color: var(--text-main); font-family: inherit;">
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <label for="subject" style="font-weight: 500; font-size: 0.95rem;">Subject</label>
+                        <select id="subject" name="subject" style="padding: 0.75rem 1rem; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-base); color: var(--text-main); font-family: inherit; appearance: none;">
+                            <option value="general">General Inquiry</option>
+                            <option value="content">Content Correction (Quiz/Articles)</option>
+                            <option value="technical">Technical Support</option>
+                        </select>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <label for="message" style="font-weight: 500; font-size: 0.95rem;">Message</label>
+                        <textarea id="message" name="message" rows="5" required style="padding: 0.75rem 1rem; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-base); color: var(--text-main); font-family: inherit; resize: vertical;"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn" style="align-self: flex-start; margin-top: 1rem; min-width: 200px;">Send Message</button>
+                </form>
+
+                <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 1rem;">
+                    <h3 style="font-family: var(--font-sans); font-size: 1.2rem;">Direct Contact</h3>
+                    <p style="color: var(--text-muted);">Email: <a href="mailto:admin@jrnation.cc" style="color: var(--accent); text-decoration: underline;">admin@jrnation.cc</a></p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Please allow 24-48 hours for our editorial team to review content corrections.</p>
+                </div>
+
+            </article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <nav class="footer-links" aria-label="Legal Navigation">
+                <a href="/about/">About Us</a>
+                <a href="/contact/">Contact</a>
+                <a href="/legal/privacy.html">Privacy Policy</a>
+                <a href="/legal/terms.html">Terms of Service</a>
+                <a href="/legal/disclaimer.html">Disclaimer</a>
+            </nav>
+            <p class="copyright">&copy; 2026 JR Nation. Built for clarity.</p>
+        </div>
+    </footer>
+    <script type="module" src="../app.js"></script>
+</body>
+</html>
