@@ -70,6 +70,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if(userProfile) userProfile.style.display = 'none';
             if(logoutBtn) logoutBtn.style.display = 'none';
         }
+
+        // Show auth controls once state is determined
+        const authControls = document.querySelector('.auth-controls');
+        if (authControls) {
+            authControls.style.opacity = '1';
+            authControls.style.pointerEvents = 'auto';
+        }
     });
 
     // Trigger Google Sign-In
@@ -105,10 +112,21 @@ class QuizWidget {
         this.container = container;
         this.state = {
             question: null,
+            questionIndex: null,
             selectedIndex: null,
             isSubmitted: false
         };
         this.init();
+    }
+
+    updateLocalStorage() {
+        const today = new Date().toISOString().split('T')[0];
+        localStorage.setItem('jrnation_quiz_state', JSON.stringify({
+            date: today,
+            questionIndex: this.state.questionIndex,
+            isSubmitted: this.state.isSubmitted,
+            selectedIndex: this.state.selectedIndex
+        }));
     }
 
     async init() {
@@ -122,9 +140,43 @@ class QuizWidget {
             
             const questions = await response.json();
             
-            // Pick a random question for the daily challenge (or modify logic to pick by date)
-            this.state.question = questions[Math.floor(Math.random() * questions.length)];
+            const today = new Date().toISOString().split('T')[0];
+            const savedStateStr = localStorage.getItem('jrnation_quiz_state');
+            let savedState = null;
+            
+            if (savedStateStr) {
+                try {
+                    savedState = JSON.parse(savedStateStr);
+                } catch(e) {}
+            }
+
+            let questionIdx;
+            
+            if (savedState && savedState.date === today) {
+                // Load from state
+                questionIdx = savedState.questionIndex;
+                this.state.selectedIndex = savedState.selectedIndex;
+                this.state.isSubmitted = savedState.isSubmitted;
+            } else {
+                // New day, pick random question
+                questionIdx = Math.floor(Math.random() * questions.length);
+            }
+            
+            this.state.questionIndex = questionIdx;
+            this.state.question = questions[questionIdx];
+            
+            if (!savedState || savedState.date !== today) {
+                this.updateLocalStorage();
+            }
+
             this.render();
+            
+            // If it was already submitted, evaluate immediately
+            if (this.state.isSubmitted) {
+                const options = this.container.querySelectorAll('li');
+                this.container.querySelector('.submit-btn').style.display = 'none';
+                this.evaluate(options);
+            }
         } catch (error) {
             console.error("Quiz load failed:", error);
             this.container.innerHTML = `
@@ -137,22 +189,23 @@ class QuizWidget {
     }
 
     render() {
-        const { question } = this.state;
+        const { question, selectedIndex } = this.state;
         
         // Render the UI
         this.container.innerHTML = `
             <div class="quiz-question">${question.question}</div>
             <ul class="quiz-options" role="listbox">
-                ${question.options.map((opt, i) => `
-                    <li role="option" aria-selected="false" data-index="${i}">${opt}</li>
-                `).join('')}
+                ${question.options.map((opt, i) => {
+                    const isSelected = selectedIndex === i;
+                    return `<li role="option" aria-selected="${isSelected}" data-index="${i}" class="${isSelected ? 'selected' : ''}">${opt}</li>`;
+                }).join('')}
             </ul>
             
             <div id="auth-warning" style="display:none; color: var(--error-text); margin-top: 1.5rem; font-size: 0.95rem; text-align: center; font-weight: 500;">
                 You must sign in with Google to submit your answer and save your score.
             </div>
             
-            <button class="btn submit-btn" style="display: none;" disabled>Submit Answer</button>
+            <button class="btn submit-btn" style="${selectedIndex !== null && !this.state.isSubmitted ? 'display: block;' : 'display: none;'}" ${selectedIndex !== null ? '' : 'disabled'}>Submit Answer</button>
             
             <div class="result-container" style="display: none;" aria-live="polite"></div>
         `;
@@ -182,6 +235,9 @@ class QuizWidget {
                 target.setAttribute('aria-selected', 'true');
                 this.state.selectedIndex = parseInt(target.dataset.index);
 
+                // Save selected option to local storage
+                this.updateLocalStorage();
+
                 // Reveal submit button, hide warning if they are trying again
                 submitBtn.style.display = 'block';
                 submitBtn.removeAttribute('disabled');
@@ -204,6 +260,7 @@ class QuizWidget {
 
             // Lock the quiz
             this.state.isSubmitted = true;
+            this.updateLocalStorage();
             submitBtn.style.display = 'none';
             this.evaluate(options);
             

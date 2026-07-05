@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf9f6">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111111">
+    <title>Directive Principles of State Policy | JR Nation</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .content-body h2 { font-size: 1.8rem; margin: 2.5rem 0 1rem; }
+        .content-body h3 { font-size: 1.4rem; margin: 2rem 0 1rem; font-family: var(--font-sans); }
+        .content-body p { margin-bottom: 1.5rem; color: var(--text-muted); }
+        .content-body ul { margin-bottom: 1.5rem; padding-left: 1.5rem; color: var(--text-muted); }
+        .content-body li { margin-bottom: 0.5rem; }
+        .highlight-box { background: var(--bg-surface); border-left: 4px solid var(--accent); padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0; box-shadow: var(--shadow-sm); }
+        .highlight-box strong { color: var(--text-main); }
+    </style>
+</head>
+<body>
+<header class="site-header">
+    <div class="container site-nav">
+        <div class="logo">
+            <a href="/" aria-label="JR Nation Home">JR Nation.</a>
+        </div>
+        <nav class="nav-links" aria-label="Main Navigation" style="display: flex; align-items: center; gap: 2rem;">
+            <a href="/india/" class="active">Polity</a>
+            <a href="/history/">History</a>
+            <a href="/economics/">Economics</a>
+            <a href="/daily/">Daily Quiz</a>
+            
+            <div class="auth-controls" style="display: flex; align-items: center; gap: 1rem; margin-left: 1rem; padding-left: 1rem; border-left: 1px solid var(--border-color); opacity: 0; pointer-events: none; transition: opacity 0.3s ease;">
+                <button id="login-btn" class="btn" style="padding: 0.4rem 1rem; font-size: 0.85rem; margin-top: 0;">Sign in</button>
+                <div id="user-profile" style="display: none; align-items: center; gap: 0.5rem; cursor: pointer;"></div>
+                <button id="logout-btn" style="display: none; background: transparent; border: none; font-size: 0.85rem; color: var(--text-muted); cursor: pointer; text-decoration: underline;">Logout</button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<div class="docs-container">
+    <aside class="docs-sidebar">
+        <h4>Phase 1: Framework</h4>
+        <ul>
+            <li><a href="preamble-territory.html" >Preamble & Territory</a></li>
+            <li><a href="fundamental-rights.html" >Fundamental Rights</a></li>
+            <li><a href="dpsp.html" class="active">Directive Principles</a></li>
+            <li><a href="amendments-basic-structure.html" >Amendments & Basic Structure</a></li>
+        </ul>
+        <h4>Phase 2: Union</h4>
+        <ul>
+            <li><a href="parliamentary-system.html" >Parliamentary System</a></li>
+            <li><a href="union-executive.html" >Union Executive</a></li>
+            <li><a href="parliament-in-action.html" >Parliament in Action</a></li>
+            <li><a href="judiciary.html" >The Judiciary</a></li>
+        </ul>
+        <h4>Phase 3: States & Local</h4>
+        <ul>
+            <li><a href="state-executive-legislature.html" >State Executive</a></li>
+            <li><a href="panchayati-raj.html" >Panchayati Raj</a></li>
+            <li><a href="constitutional-bodies.html" >Constitutional Bodies</a></li>
+            <li><a href="federal-relations.html" >Federal Relations</a></li>
+        </ul>
+    </aside>
+
+    <main class="docs-main" id="main-content">
+        <nav class="breadcrumbs">
+            <a href="/">JR Nation</a>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            <a href="/india/">Polity</a>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            <span>Directive Principles of State Policy</span>
+        </nav>
+
+        <header class="article-header" style="text-align: left; margin: 0 0 3rem 0; max-width: 100%;">
+            <p style="color: var(--accent); font-weight: 500; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; font-size: 0.9rem;">Phase 1: The Constitutional Framework</p>
+            <h1 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem;">Directive Principles of State Policy</h1>
+            <p class="subtitle" style="font-size: 1.1rem; line-height: 1.8;">The socio-economic obligations of the state and their conflict with Fundamental Rights.</p>
+        </header>
+
+        <article class="content-body" style="line-height: 1.8; font-size: 1.1rem;">
+<h2>Nature and Significance (Part IV, Articles 36-51)</h2>
+        <p>Borrowing from the Irish Constitution, the DPSP represent the ideals that the State should keep in mind while formulating policies and enacting laws. Unlike Fundamental Rights, they are <strong>non-justiciable</strong>, meaning they are not legally enforceable by the courts for their violation. However, Article 37 states they are "fundamental in the governance of the country."</p>
+        
+        <h3>Classification of Directive Principles</h3>
+        <p>While the Constitution does not formally classify them, based on their content, they are usually categorized into three types:</p>
+        <ul>
+            <li><strong>Socialistic Principles:</strong> Aim to establish a welfare state. Examples include Article 38 (promote welfare of people), Article 39 (equitable distribution of material resources, equal pay for equal work), and Article 41 (right to work, to education).</li>
+            <li><strong>Gandhian Principles:</strong> Based on Gandhian ideology. Examples include Article 40 (organize village panchayats), Article 43 (promote cottage industries), and Article 47 (prohibit intoxicating drinks and drugs).</li>
+            <li><strong>Liberal-Intellectual Principles:</strong> Reflect the ideology of liberalism. Examples include Article 44 (Uniform Civil Code), Article 45 (early childhood care and education), and Article 50 (separation of judiciary from executive).</li>
+        </ul>
+
+        <div class="highlight-box">
+            <h3 style="margin-top: 0;">Fundamental Rights vs. DPSP</h3>
+            <p style="margin-bottom: 0;">Historically, there has been a conflict between FRs (individual rights) and DPSP (social good).<br><br><strong>Minerva Mills Case (1980):</strong> The Supreme Court established that the Indian Constitution is founded on the <em>bedrock of the balance</em> between Part III and Part IV. Giving absolute primacy to one over the other would disturb the harmony of the Constitution. Therefore, they are supplementary and complementary to each other.</p>
+        </div>
+
+        <h2>Fundamental Duties (Part IVA, Article 51A)</h2>
+        <p>Added by the 42nd Amendment Act (1976) upon the recommendation of the Swaran Singh Committee. Originally 10 duties were added, and an 11th duty (to provide opportunities for education to children aged 6-14) was added by the 86th Amendment Act (2002).</p>
+        <p>Like DPSP, Fundamental Duties are non-justiciable. However, courts can use them to interpret the constitutionality of a law if it seeks to give effect to a duty.</p>
+        </article>
+
+        <nav class="docs-pagination">
+            <a href="fundamental-rights.html" class="prev">
+                <span class="label">Previous</span>
+                <span class="title">« Fundamental Rights (Part III)</span>
+            </a>
+            <a href="amendments-basic-structure.html" class="next">
+                <span class="label">Next</span>
+                <span class="title">Amendments & Basic Structure »</span>
+            </a>
+        </nav>
+    </main>
+
+    <aside class="docs-toc">
+        <h5>On this page</h5>
+        <ul>
+            <li><a href="#">Nature and Significance (Part IV, Articles 36-51)</a></li>
+            <li style="padding-left: 1rem; opacity: 0.8;"><a href="#">Classification of Directive Principles</a></li>
+            <li style="padding-left: 1rem; opacity: 0.8;"><a href="#">Fundamental Rights vs. DPSP</a></li>
+            <li><a href="#">Fundamental Duties (Part IVA, Article 51A)</a></li>
+        </ul>
+    </aside>
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+        <p class="copyright">&copy; 2026 JR Nation. Built for clarity.</p>
+    </div>
+</footer>
+
+<script type="module" src="../app.js"></script>
+</body>
+</html>

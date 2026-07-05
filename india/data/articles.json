@@ -1,0 +1,52 @@
+[
+  {
+    "id": "article-14",
+    "type": "Article",
+    "category": "Fundamental Rights (Part III)",
+    "title": "Article 14: Equality before Law",
+    "bare_text": "The State shall not deny to any person equality before the law or the equal protection of the laws within the territory of India.",
+    "plain_english": "The government cannot treat people differently or unfairly. Everyone is subject to the same laws, and the law must protect everyone equally.",
+    "example": "If a rich politician and a poor farmer commit the exact same crime, the court must judge them by the exact same rules without bias.",
+    "extra_content": "<ul><li><strong>Equality before Law:</strong> A negative concept borrowed from English Common Law (absence of special privileges).</li><li><strong>Equal Protection of Laws:</strong> A positive concept borrowed from the US Constitution (equality of treatment in equal circumstances).</li><li><strong>Exceptions:</strong> The President and Governors enjoy immunity under Article 361.</li></ul>"
+  },
+  {
+    "id": "article-19",
+    "type": "Article",
+    "category": "Fundamental Rights (Part III)",
+    "title": "Article 19: Protection of Certain Rights regarding Freedom of Speech, etc.",
+    "bare_text": "All citizens shall have the right: (a) to freedom of speech and expression; (b) to assemble peaceably and without arms; (c) to form associations or unions; (d) to move freely throughout the territory of India; (e) to reside and settle in any part of the territory of India; and (g) to practice any profession, or to carry on any occupation, trade or business.",
+    "plain_english": "This article gives Indian citizens six basic freedoms: speech, assembly, association, movement, residence, and profession. However, these are not absolute and can be restricted for reasons like national security or public order.",
+    "example": "You have the right to peacefully protest against a government policy in a public square (freedom of assembly and expression), but you cannot incite a riot or carry weapons during the protest.",
+    "extra_content": "<ul><li><strong>Reasonable Restrictions:</strong> Found in Clauses (2) to (6) of Article 19. The state can impose restrictions on grounds like sovereignty and integrity of India, security of the state, public order, decency, or morality.</li><li><strong>Right to Property:</strong> The original Article 19(1)(f) was deleted by the 44th Amendment Act of 1978.</li></ul>"
+  },
+  {
+    "id": "article-21",
+    "type": "Article",
+    "category": "Fundamental Rights (Part III)",
+    "title": "Article 21: Protection of Life and Personal Liberty",
+    "bare_text": "No person shall be deprived of his life or personal liberty except according to procedure established by law.",
+    "plain_english": "The government cannot take away your life or your freedom unless there is a fair and just law that allows it.",
+    "example": "The police cannot arrest you and keep you in jail indefinitely without following the strict legal procedures laid out in the Criminal Procedure Code.",
+    "extra_content": "<ul><li><strong>Maneka Gandhi Case (1978):</strong> The Supreme Court expanded Article 21 to include 'due process of law'. The procedure must be fair, just, and reasonable, not arbitrary.</li><li><strong>Right to Privacy:</strong> Declared a fundamental right under Article 21 in the KS Puttaswamy Case (2017).</li><li><strong>Scope:</strong> 'Life' is not just mere animal existence; it includes the right to live with human dignity.</li></ul>"
+  },
+  {
+    "id": "article-32",
+    "type": "Article",
+    "category": "Fundamental Rights (Part III)",
+    "title": "Article 32: Remedies for Enforcement of Rights",
+    "bare_text": "The right to move the Supreme Court by appropriate proceedings for the enforcement of the rights conferred by this Part is guaranteed.",
+    "plain_english": "If your Fundamental Rights are violated, you have the direct right to approach the Supreme Court of India to get them restored. You don't have to go through the lower courts first.",
+    "example": "If the government illegally demolishes your house or bans your newspaper without a valid reason, you can immediately file a writ petition in the Supreme Court to stop them.",
+    "extra_content": "<ul><li><strong>Soul of the Constitution:</strong> Dr. B.R. Ambedkar called Article 32 the 'heart and soul' of the Constitution.</li><li><strong>Types of Writs:</strong> The SC can issue five types of writs: Habeas Corpus, Mandamus, Prohibition, Certiorari, and Quo-Warranto.</li><li><strong>Basic Structure:</strong> The power of judicial review under Article 32 is a part of the basic structure of the Constitution.</li></ul>"
+  },
+  {
+    "id": "act-1773",
+    "type": "Act",
+    "category": "Historical Background",
+    "title": "Regulating Act of 1773",
+    "bare_text": "[Historical Act, no singular bare text in the Constitution format]",
+    "plain_english": "This was the first time the British Government stepped in to control and regulate the affairs of the East India Company in India.",
+    "example": "Before 1773, the East India Company operated like a rogue private corporation. This act forced them to report to the British Parliament and established the first Supreme Court in Calcutta.",
+    "extra_content": "<ul><li><strong>Governor-General:</strong> It designated the Governor of Bengal as the 'Governor-General of Bengal' (Lord Warren Hastings).</li><li><strong>Supreme Court:</strong> Provided for the establishment of a Supreme Court at Calcutta (1774) with one Chief Justice and three other judges.</li><li><strong>Anti-Corruption:</strong> Prohibited the servants of the Company from engaging in any private trade or accepting presents or bribes.</li></ul>"
+  }
+]

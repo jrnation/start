@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf9f6">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111111">
+    <title>Amendments & Basic Structure | JR Nation</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .content-body h2 { font-size: 1.8rem; margin: 2.5rem 0 1rem; }
+        .content-body h3 { font-size: 1.4rem; margin: 2rem 0 1rem; font-family: var(--font-sans); }
+        .content-body p { margin-bottom: 1.5rem; color: var(--text-muted); }
+        .content-body ul { margin-bottom: 1.5rem; padding-left: 1.5rem; color: var(--text-muted); }
+        .content-body li { margin-bottom: 0.5rem; }
+        .highlight-box { background: var(--bg-surface); border-left: 4px solid var(--accent); padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0; box-shadow: var(--shadow-sm); }
+        .highlight-box strong { color: var(--text-main); }
+    </style>
+</head>
+<body>
+<header class="site-header">
+    <div class="container site-nav">
+        <div class="logo">
+            <a href="/" aria-label="JR Nation Home">JR Nation.</a>
+        </div>
+        <nav class="nav-links" aria-label="Main Navigation" style="display: flex; align-items: center; gap: 2rem;">
+            <a href="/india/" class="active">Polity</a>
+            <a href="/history/">History</a>
+            <a href="/economics/">Economics</a>
+            <a href="/daily/">Daily Quiz</a>
+            
+            <div class="auth-controls" style="display: flex; align-items: center; gap: 1rem; margin-left: 1rem; padding-left: 1rem; border-left: 1px solid var(--border-color); opacity: 0; pointer-events: none; transition: opacity 0.3s ease;">
+                <button id="login-btn" class="btn" style="padding: 0.4rem 1rem; font-size: 0.85rem; margin-top: 0;">Sign in</button>
+                <div id="user-profile" style="display: none; align-items: center; gap: 0.5rem; cursor: pointer;"></div>
+                <button id="logout-btn" style="display: none; background: transparent; border: none; font-size: 0.85rem; color: var(--text-muted); cursor: pointer; text-decoration: underline;">Logout</button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<div class="docs-container">
+    <aside class="docs-sidebar">
+        <h4>Phase 1: Framework</h4>
+        <ul>
+            <li><a href="preamble-territory.html" >Preamble & Territory</a></li>
+            <li><a href="fundamental-rights.html" >Fundamental Rights</a></li>
+            <li><a href="dpsp.html" >Directive Principles</a></li>
+            <li><a href="amendments-basic-structure.html" class="active">Amendments & Basic Structure</a></li>
+        </ul>
+        <h4>Phase 2: Union</h4>
+        <ul>
+            <li><a href="parliamentary-system.html" >Parliamentary System</a></li>
+            <li><a href="union-executive.html" >Union Executive</a></li>
+            <li><a href="parliament-in-action.html" >Parliament in Action</a></li>
+            <li><a href="judiciary.html" >The Judiciary</a></li>
+        </ul>
+        <h4>Phase 3: States & Local</h4>
+        <ul>
+            <li><a href="state-executive-legislature.html" >State Executive</a></li>
+            <li><a href="panchayati-raj.html" >Panchayati Raj</a></li>
+            <li><a href="constitutional-bodies.html" >Constitutional Bodies</a></li>
+            <li><a href="federal-relations.html" >Federal Relations</a></li>
+        </ul>
+    </aside>
+
+    <main class="docs-main" id="main-content">
+        <nav class="breadcrumbs">
+            <a href="/">JR Nation</a>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            <a href="/india/">Polity</a>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            <span>Amendments & Basic Structure</span>
+        </nav>
+
+        <header class="article-header" style="text-align: left; margin: 0 0 3rem 0; max-width: 100%;">
+            <p style="color: var(--accent); font-weight: 500; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; font-size: 0.9rem;">Phase 1: The Constitutional Framework</p>
+            <h1 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem;">Amendments & Basic Structure</h1>
+            <p class="subtitle" style="font-size: 1.1rem; line-height: 1.8;">How the Constitution adapts, focusing on the Kesavananda Bharati case framework.</p>
+        </header>
+
+        <article class="content-body" style="line-height: 1.8; font-size: 1.1rem;">
+<h2>The Amendment Process (Article 368)</h2>
+        <p>The Constitution of India provides for its amendment to adjust itself to changing conditions and needs. However, the procedure is neither as easy as in Britain nor as difficult as in the USA. It is a synthesis of both.</p>
+        
+        <h3>Types of Majority Required</h3>
+        <p>Amendments can be made in three ways:</p>
+        <ul>
+            <li><strong>Simple Majority:</strong> (Not under Art 368) A simple majority of the two Houses of Parliament (e.g., formation of new states, abolition of state legislative councils).</li>
+            <li><strong>Special Majority:</strong> Majority of the total membership of each House and a majority of two-thirds of the members present and voting (e.g., Fundamental Rights, DPSP).</li>
+            <li><strong>Special Majority + State Ratification:</strong> Requires a special majority of Parliament plus ratification by half of the state legislatures by a simple majority (e.g., Election of the President, Supreme Court and High Courts, distribution of legislative powers).</li>
+        </ul>
+
+        <div class="highlight-box">
+            <h3 style="margin-top: 0;">The Kesavananda Bharati Case (1973)</h3>
+            <p style="margin-bottom: 0;">This is arguably the most important constitutional case in Indian history.<br><br>The 13-judge bench established the <strong>Basic Structure Doctrine</strong>. It ruled that while Parliament has vast powers to amend the Constitution under Article 368 (including Fundamental Rights), it cannot use this power to alter or destroy the "basic structure" or framework of the Constitution.</p>
+        </div>
+
+        <h2>Elements of the Basic Structure</h2>
+        <p>The Supreme Court has not provided an exhaustive list of what constitutes the basic structure. Instead, it is decided on a case-by-case basis. However, over the years, the following have been identified as components of the basic structure:</p>
+        <ul>
+            <li>Supremacy of the Constitution</li>
+            <li>Sovereign, democratic, and republican nature of the Indian polity</li>
+            <li>Secular character of the Constitution</li>
+            <li>Separation of powers between the legislature, executive, and judiciary</li>
+            <li>Federal character of the Constitution</li>
+            <li>Judicial Review</li>
+            <li>Rule of Law</li>
+            <li>Free and fair elections</li>
+        </ul>
+        
+        <p>The 42nd Amendment Act (1976) attempted to establish the supremacy of Parliament by stating there is no limitation on its amending power. However, the Supreme Court struck this down in the <strong>Minerva Mills case (1980)</strong>, reiterating that Judicial Review is a basic feature.</p>
+        </article>
+
+        <nav class="docs-pagination">
+            <a href="dpsp.html" class="prev">
+                <span class="label">Previous</span>
+                <span class="title">« Directive Principles of State Policy</span>
+            </a>
+            <a href="parliamentary-system.html" class="next">
+                <span class="label">Next</span>
+                <span class="title">Parliamentary System »</span>
+            </a>
+        </nav>
+    </main>
+
+    <aside class="docs-toc">
+        <h5>On this page</h5>
+        <ul>
+            <li><a href="#">The Amendment Process (Article 368)</a></li>
+            <li style="padding-left: 1rem; opacity: 0.8;"><a href="#">Types of Majority Required</a></li>
+            <li style="padding-left: 1rem; opacity: 0.8;"><a href="#">The Kesavananda Bharati Case (1973)</a></li>
+            <li><a href="#">Elements of the Basic Structure</a></li>
+        </ul>
+    </aside>
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+        <p class="copyright">&copy; 2026 JR Nation. Built for clarity.</p>
+    </div>
+</footer>
+
+<script type="module" src="../app.js"></script>
+</body>
+</html>

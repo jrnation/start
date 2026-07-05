@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf9f6">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111111">
+    <title>Constitution Explorer | JR Nation</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="container site-nav">
+        <div class="logo">
+            <a href="/" aria-label="JR Nation Home">JR Nation.</a>
+        </div>
+        <nav class="nav-links" aria-label="Main Navigation" style="display: flex; align-items: center; gap: 2rem;">
+            <a href="/india/" class="active">Polity</a>
+            <a href="/history/">History</a>
+            <a href="/economics/">Economics</a>
+            <a href="/daily/">Daily Quiz</a>
+            
+            <div class="auth-controls" style="display: flex; align-items: center; gap: 1rem; margin-left: 1rem; padding-left: 1rem; border-left: 1px solid var(--border-color); opacity: 0; pointer-events: none; transition: opacity 0.3s ease;">
+                <button id="login-btn" class="btn" style="padding: 0.4rem 1rem; font-size: 0.85rem; margin-top: 0;">Sign in</button>
+                <div id="user-profile" style="display: none; align-items: center; gap: 0.5rem; cursor: pointer;"></div>
+                <button id="logout-btn" style="display: none; background: transparent; border: none; font-size: 0.85rem; color: var(--text-muted); cursor: pointer; text-decoration: underline;">Logout</button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main class="explorer-container">
+    <aside class="explorer-sidebar">
+        <div class="explorer-search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="searchInput" placeholder="Search Articles, Acts..." aria-label="Search">
+        </div>
+        
+        <div class="explorer-filters">
+            <button class="filter-btn active" data-type="all">All</button>
+            <button class="filter-btn" data-type="Article">Articles</button>
+            <button class="filter-btn" data-type="Act">Acts</button>
+        </div>
+
+        <div class="explorer-results" id="resultsList">
+            <!-- Populated by JS -->
+        </div>
+    </aside>
+
+    <section class="explorer-main" id="contentArea">
+        <div class="explorer-empty-state">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            <h2>Select an Article or Act</h2>
+            <p>Search or browse the left panel to explore the Constitution in plain English.</p>
+        </div>
+    </section>
+</main>
+
+<script type="module" src="../app.js"></script>
+<script>
+    // Fetch and handle data
+    let db = [];
+    
+    async function loadData() {
+        try {
+            const res = await fetch('data/articles.json');
+            db = await res.json();
+            renderList(db);
+        } catch (error) {
+            console.error('Error loading articles:', error);
+            document.getElementById('resultsList').innerHTML = '<p style="padding: 1rem; color: var(--text-muted);">Failed to load database.</p>';
+        }
+    }
+
+    function renderList(items) {
+        const list = document.getElementById('resultsList');
+        list.innerHTML = '';
+        
+        if (items.length === 0) {
+            list.innerHTML = '<p style="padding: 1rem; color: var(--text-muted);">No results found.</p>';
+            return;
+        }
+
+        // Group by category conceptually or just list them. We'll just list them.
+        items.forEach(item => {
+            const el = document.createElement('div');
+            el.className = 'explorer-item';
+            el.innerHTML = `
+                <div class="type-badge ${item.type.toLowerCase()}">${item.type}</div>
+                <div class="item-title">${item.title}</div>
+                <div class="item-cat">${item.category}</div>
+            `;
+            el.addEventListener('click', () => {
+                document.querySelectorAll('.explorer-item').forEach(n => n.classList.remove('active'));
+                el.classList.add('active');
+                renderContent(item);
+            });
+            list.appendChild(el);
+        });
+    }
+
+    function renderContent(item) {
+        const content = document.getElementById('contentArea');
+        content.innerHTML = `
+            <div class="explorer-article">
+                <span class="type-tag">${item.type}</span>
+                <span class="cat-tag">${item.category}</span>
+                <h1>${item.title}</h1>
+                
+                <div class="content-section bare-text">
+                    <h3>Official Text (Bare Act)</h3>
+                    <p><em>"${item.bare_text}"</em></p>
+                </div>
+
+                <div class="content-section plain-english">
+                    <h3>In Plain English</h3>
+                    <p>${item.plain_english}</p>
+                </div>
+
+                <div class="content-section example">
+                    <h3>Real-World Example</h3>
+                    <p>${item.example}</p>
+                </div>
+
+                <div class="content-section extra">
+                    <h3>High-Yield Notes</h3>
+                    ${item.extra_content}
+                </div>
+            </div>
+        `;
+    }
+
+    // Search and Filter Logic
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+        filterData();
+    });
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+            filterData();
+        });
+    });
+
+    function filterData() {
+        const q = document.getElementById('searchInput').value.toLowerCase();
+        const typeFilter = document.querySelector('.filter-btn.active').dataset.type;
+        
+        const filtered = db.filter(item => {
+            const matchesQuery = item.title.toLowerCase().includes(q) || 
+                                 item.plain_english.toLowerCase().includes(q) ||
+                                 item.category.toLowerCase().includes(q);
+            const matchesType = typeFilter === 'all' ? true : item.type === typeFilter;
+            return matchesQuery && matchesType;
+        });
+        
+        renderList(filtered);
+    }
+
+    // Init
+    loadData();
+</script>
+</body>
+</html>

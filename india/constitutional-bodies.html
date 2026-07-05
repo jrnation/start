@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf9f6">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111111">
+    <title>Constitutional Bodies | JR Nation</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .content-body h2 { font-size: 1.8rem; margin: 2.5rem 0 1rem; }
+        .content-body h3 { font-size: 1.4rem; margin: 2rem 0 1rem; font-family: var(--font-sans); }
+        .content-body p { margin-bottom: 1.5rem; color: var(--text-muted); }
+        .content-body ul { margin-bottom: 1.5rem; padding-left: 1.5rem; color: var(--text-muted); }
+        .content-body li { margin-bottom: 0.5rem; }
+        .highlight-box { background: var(--bg-surface); border-left: 4px solid var(--accent); padding: 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0; box-shadow: var(--shadow-sm); }
+        .highlight-box strong { color: var(--text-main); }
+    </style>
+</head>
+<body>
+<header class="site-header">
+    <div class="container site-nav">
+        <div class="logo">
+            <a href="/" aria-label="JR Nation Home">JR Nation.</a>
+        </div>
+        <nav class="nav-links" aria-label="Main Navigation" style="display: flex; align-items: center; gap: 2rem;">
+            <a href="/india/" class="active">Polity</a>
+            <a href="/history/">History</a>
+            <a href="/economics/">Economics</a>
+            <a href="/daily/">Daily Quiz</a>
+            
+            <div class="auth-controls" style="display: flex; align-items: center; gap: 1rem; margin-left: 1rem; padding-left: 1rem; border-left: 1px solid var(--border-color); opacity: 0; pointer-events: none; transition: opacity 0.3s ease;">
+                <button id="login-btn" class="btn" style="padding: 0.4rem 1rem; font-size: 0.85rem; margin-top: 0;">Sign in</button>
+                <div id="user-profile" style="display: none; align-items: center; gap: 0.5rem; cursor: pointer;"></div>
+                <button id="logout-btn" style="display: none; background: transparent; border: none; font-size: 0.85rem; color: var(--text-muted); cursor: pointer; text-decoration: underline;">Logout</button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<div class="docs-container">
+    <aside class="docs-sidebar">
+        <h4>Phase 1: Framework</h4>
+        <ul>
+            <li><a href="preamble-territory.html" >Preamble & Territory</a></li>
+            <li><a href="fundamental-rights.html" >Fundamental Rights</a></li>
+            <li><a href="dpsp.html" >Directive Principles</a></li>
+            <li><a href="amendments-basic-structure.html" >Amendments & Basic Structure</a></li>
+        </ul>
+        <h4>Phase 2: Union</h4>
+        <ul>
+            <li><a href="parliamentary-system.html" >Parliamentary System</a></li>
+            <li><a href="union-executive.html" >Union Executive</a></li>
+            <li><a href="parliament-in-action.html" >Parliament in Action</a></li>
+            <li><a href="judiciary.html" >The Judiciary</a></li>
+        </ul>
+        <h4>Phase 3: States & Local</h4>
+        <ul>
+            <li><a href="state-executive-legislature.html" >State Executive</a></li>
+            <li><a href="panchayati-raj.html" >Panchayati Raj</a></li>
+            <li><a href="constitutional-bodies.html" class="active">Constitutional Bodies</a></li>
+            <li><a href="federal-relations.html" >Federal Relations</a></li>
+        </ul>
+    </aside>
+
+    <main class="docs-main" id="main-content">
+        <nav class="breadcrumbs">
+            <a href="/">JR Nation</a>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            <a href="/india/">Polity</a>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            <span>Constitutional Bodies</span>
+        </nav>
+
+        <header class="article-header" style="text-align: left; margin: 0 0 3rem 0; max-width: 100%;">
+            <p style="color: var(--accent); font-weight: 500; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; font-size: 0.9rem;">Phase 3: States, Local Bodies & Authorities</p>
+            <h1 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem;">Constitutional Bodies</h1>
+            <p class="subtitle" style="font-size: 1.1rem; line-height: 1.8;">Election Commission, UPSC, and the CAG—their powers and independence.</p>
+        </header>
+
+        <article class="content-body" style="line-height: 1.8; font-size: 1.1rem;">
+<h2>The Bulwarks of the Constitution</h2>
+        <p>Dr. B.R. Ambedkar envisioned certain institutions as the 'bulwarks' of the democratic system of India. These are explicitly mentioned in the Constitution, granting them a high degree of autonomy and independence from the executive.</p>
+        
+        <h3>Election Commission (Article 324)</h3>
+        <p>The Election Commission is a permanent and independent body responsible for ensuring free and fair elections. It conducts elections to the Parliament, state legislatures, the office of President, and the office of Vice-President. Note: It does <em>not</em> conduct panchayat and municipality elections.</p>
+        <ul>
+            <li><strong>Composition:</strong> A Chief Election Commissioner and such number of other Election Commissioners as the President may fix. Currently, it's a multi-member body (3 members).</li>
+            <li><strong>Independence:</strong> The CEC can only be removed in like manner and on like grounds as a judge of the Supreme Court.</li>
+        </ul>
+
+        <div class="highlight-box">
+            <h3 style="margin-top: 0;">Comptroller and Auditor General (CAG) - Article 148</h3>
+            <p style="margin-bottom: 0;">The CAG is the head of the Indian Audit and Accounts Department and the guardian of the public purse at both the central and state levels.<br><br>He is appointed by the President. To ensure independence, his salary is charged upon the Consolidated Fund of India, and he cannot be removed by the executive (removal process is identical to a Supreme Court Judge). He audits all receipts and expenditure of the GoI and state governments.</p>
+        </div>
+
+        <h2>Union Public Service Commission (Articles 315-323)</h2>
+        <p>The UPSC is the central recruiting agency in India. It is an independent constitutional body.</p>
+        <ul>
+            <li><strong>Appointment:</strong> The Chairman and members are appointed by the President.</li>
+            <li><strong>Term:</strong> They hold office for a term of six years or until they attain the age of 65 years.</li>
+            <li><strong>Removal:</strong> The President can remove the chairman or any member only on grounds of misbehavior, but only after the Supreme Court investigates and upholds the charge.</li>
+            <li><strong>Function:</strong> It conducts examinations for appointments to the all-India services and central services. Its role is advisory; the government is not bound to accept its recommendations.</li>
+        </ul>
+
+        <h2>Finance Commission (Article 280)</h2>
+        <p>A quasi-judicial body constituted by the President every fifth year (or earlier). Its primary function is to recommend the distribution of the net proceeds of taxes between the Centre and the states, and the principles governing grants-in-aid to states.</p>
+        </article>
+
+        <nav class="docs-pagination">
+            <a href="panchayati-raj.html" class="prev">
+                <span class="label">Previous</span>
+                <span class="title">« Panchayati Raj & Municipalities</span>
+            </a>
+            <a href="federal-relations.html" class="next">
+                <span class="label">Next</span>
+                <span class="title">Federal Relations »</span>
+            </a>
+        </nav>
+    </main>
+
+    <aside class="docs-toc">
+        <h5>On this page</h5>
+        <ul>
+            <li><a href="#">The Bulwarks of the Constitution</a></li>
+            <li style="padding-left: 1rem; opacity: 0.8;"><a href="#">Election Commission (Article 324)</a></li>
+            <li style="padding-left: 1rem; opacity: 0.8;"><a href="#">Comptroller and Auditor General (CAG) - Article 148</a></li>
+            <li><a href="#">Union Public Service Commission (Articles 315-323)</a></li>
+            <li><a href="#">Finance Commission (Article 280)</a></li>
+        </ul>
+    </aside>
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+        <p class="copyright">&copy; 2026 JR Nation. Built for clarity.</p>
+    </div>
+</footer>
+
+<script type="module" src="../app.js"></script>
+</body>
+</html>

@@ -14,6 +14,30 @@
     
     <!-- Pulling the CSS from the root directory -->
     <link rel="stylesheet" href="../style.css">
+    <style>
+        .topic-link {
+            padding: 1rem 1.25rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            display: block;
+            background: var(--bg-base);
+            transition: var(--transition);
+        }
+        .topic-link:hover {
+            border-color: var(--text-main);
+            transform: translateX(4px);
+        }
+        .topic-link strong {
+            color: var(--text-main);
+            display: block;
+            margin-bottom: 0.25rem;
+            font-size: 1.1rem;
+        }
+        .topic-link span {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+    </style>
 </head>
 <body>
 <header class="site-header">
@@ -46,6 +70,19 @@
             <p class="subtitle" style="font-size: 1.2rem; line-height: 1.8;">Polity is not about rote memorization of articles; it is the study of power dynamics, citizen rights, and the structural limits placed on the state.</p>
         </header>
 
+        <!-- Explorer Banner -->
+        <div style="background: var(--bg-surface); border: 1px solid var(--accent); padding: 2rem; border-radius: 16px; margin-bottom: 4rem; position: relative; overflow: hidden; box-shadow: var(--shadow-sm);">
+            <div style="position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--accent);"></div>
+            <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                The Constitution Explorer
+            </h2>
+            <p style="margin-bottom: 1.5rem; font-size: 1.1rem; color: var(--text-muted);">A blazing-fast, searchable database of every major Article, Act, and Amendment explained in plain English with real-world examples.</p>
+            <a href="explorer.html" class="btn" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                Launch Explorer
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+        </div>
         <div style="max-width: 800px; margin: 0 auto;">
             
             <!-- Context Section for AdSense / SEO -->
@@ -67,12 +104,24 @@
                         The Constitutional Framework
                     </h3>
                     <p style="color: var(--text-muted); margin-bottom: 1rem;">This is the philosophical core. You must understand the balance of power between the individual and the state.</p>
-                    <ul style="list-style: none; padding-left: 0; color: var(--text-muted);">
-                        <li style="margin-bottom: 0.5rem;">• <strong>Preamble & Territory:</strong> Understanding the ideological goals and the integration of states.</li>
-                        <li style="margin-bottom: 0.5rem;">• <strong>Fundamental Rights (Part III):</strong> The absolute highest-yield section. Focus heavily on Articles 14, 19, and 21, and their reasonable restrictions.</li>
-                        <li style="margin-bottom: 0.5rem;">• <strong>Directive Principles (DPSP):</strong> The socio-economic obligations of the state and their conflict with Fundamental Rights.</li>
-                        <li>• <strong>Amendments & Basic Structure:</strong> How the Constitution adapts, focusing on the Kesavananda Bharati case framework.</li>
-                    </ul>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <a href="preamble-territory.html" class="topic-link">
+                            <strong>Preamble & Territory</strong>
+                            <span>Understanding the ideological goals and the integration of states.</span>
+                        </a>
+                        <a href="fundamental-rights.html" class="topic-link">
+                            <strong>Fundamental Rights (Part III)</strong>
+                            <span>The absolute highest-yield section. Focus heavily on Articles 14, 19, and 21, and their reasonable restrictions.</span>
+                        </a>
+                        <a href="dpsp.html" class="topic-link">
+                            <strong>Directive Principles (DPSP)</strong>
+                            <span>The socio-economic obligations of the state and their conflict with Fundamental Rights.</span>
+                        </a>
+                        <a href="amendments-basic-structure.html" class="topic-link">
+                            <strong>Amendments & Basic Structure</strong>
+                            <span>How the Constitution adapts, focusing on the Kesavananda Bharati case framework.</span>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Phase 2 -->
@@ -82,12 +131,24 @@
                         System of Government & The Union
                     </h3>
                     <p style="color: var(--text-muted); margin-bottom: 1rem;">Here, you move from philosophy to the mechanical operations of the state machinery.</p>
-                    <ul style="list-style: none; padding-left: 0; color: var(--text-muted);">
-                        <li style="margin-bottom: 0.5rem;">• <strong>Parliamentary System:</strong> Comparing the Indian model with the British and American systems.</li>
-                        <li style="margin-bottom: 0.5rem;">• <strong>The Union Executive:</strong> The nuanced powers of the President versus the real authority of the Prime Minister and Council of Ministers.</li>
-                        <li style="margin-bottom: 0.5rem;">• <strong>Parliament in Action:</strong> The law-making process, budgetary procedures, parliamentary committees, and motions.</li>
-                        <li>• <strong>The Judiciary:</strong> Supreme Court jurisdictions (Original, Appellate, Advisory) and the mechanisms of Judicial Review.</li>
-                    </ul>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <a href="parliamentary-system.html" class="topic-link">
+                            <strong>Parliamentary System</strong>
+                            <span>Comparing the Indian model with the British and American systems.</span>
+                        </a>
+                        <a href="union-executive.html" class="topic-link">
+                            <strong>The Union Executive</strong>
+                            <span>The nuanced powers of the President versus the real authority of the Prime Minister and Council of Ministers.</span>
+                        </a>
+                        <a href="parliament-in-action.html" class="topic-link">
+                            <strong>Parliament in Action</strong>
+                            <span>The law-making process, budgetary procedures, parliamentary committees, and motions.</span>
+                        </a>
+                        <a href="judiciary.html" class="topic-link">
+                            <strong>The Judiciary</strong>
+                            <span>Supreme Court jurisdictions (Original, Appellate, Advisory) and the mechanisms of Judicial Review.</span>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Phase 3 -->
@@ -97,12 +158,24 @@
                         States, Local Bodies & Authorities
                     </h3>
                     <p style="color: var(--text-muted); margin-bottom: 1rem;">Examiners frequently test the structural differences between the Union and the States.</p>
-                    <ul style="list-style: none; padding-left: 0; color: var(--text-muted);">
-                        <li style="margin-bottom: 0.5rem;">• <strong>State Executive & Legislature:</strong> The discretionary powers of the Governor and the creation of Legislative Councils.</li>
-                        <li style="margin-bottom: 0.5rem;">• <strong>Panchayati Raj & Municipalities:</strong> The 73rd and 74th Amendments and grassroots democratic decentralization.</li>
-                        <li style="margin-bottom: 0.5rem;">• <strong>Constitutional Bodies:</strong> The Election Commission, UPSC, and the CAG—focus on their appointment, removal, and independence.</li>
-                        <li>• <strong>Federal Relations:</strong> Center-State legislative, administrative, and financial dynamics.</li>
-                    </ul>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <a href="state-executive-legislature.html" class="topic-link">
+                            <strong>State Executive & Legislature</strong>
+                            <span>The discretionary powers of the Governor and the creation of Legislative Councils.</span>
+                        </a>
+                        <a href="panchayati-raj.html" class="topic-link">
+                            <strong>Panchayati Raj & Municipalities</strong>
+                            <span>The 73rd and 74th Amendments and grassroots democratic decentralization.</span>
+                        </a>
+                        <a href="constitutional-bodies.html" class="topic-link">
+                            <strong>Constitutional Bodies</strong>
+                            <span>The Election Commission, UPSC, and the CAG—focus on their appointment, removal, and independence.</span>
+                        </a>
+                        <a href="federal-relations.html" class="topic-link">
+                            <strong>Federal Relations</strong>
+                            <span>Center-State legislative, administrative, and financial dynamics.</span>
+                        </a>
+                    </div>
                 </div>
             </article>
 
