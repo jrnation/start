@@ -325,7 +325,8 @@ class QuizWidget {
             });
 
             if (response.ok) {
-                console.log("Score secured in Cloudflare D1.");
+                // Data submitted successfully
+                hasSubmittedScore = true;
             } else {
                 console.error("Failed to save score. Status:", response.status);
             }
