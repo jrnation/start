@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JR Nation User Profile: Track your progress, streak, and competitive metrics.">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf9f6">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111111">
+    <title>Aspirant Profile | JR Nation</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .profile-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--border-color);
+        }
+        .profile-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        .stat-card {
+            background: var(--bg-surface);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+        .stat-value {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            font-weight: 500;
+            color: var(--text-color);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        .stat-label {
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+    </style>
+</head>
+<body>
+<header class="site-header">
+    <div class="container site-nav">
+        <div class="logo">
+            <a href="/" aria-label="JR Nation Home">JR Nation.</a>
+        </div>
+        <nav class="nav-links" aria-label="Main Navigation" style="display: flex; align-items: center; gap: 2rem;">
+            <a href="/india/">Polity</a>
+            <a href="/daily/">Daily Quiz</a>
+            <a href="/leaderboard/">Leaderboard</a>
+            
+            <div class="auth-controls" style="display: flex; align-items: center; gap: 1rem; margin-left: 1rem; padding-left: 1rem; border-left: 1px solid var(--border-color); opacity: 0; pointer-events: none; transition: opacity 0.3s ease;">
+                <button id="login-btn" class="btn" style="padding: 0.4rem 1rem; font-size: 0.85rem; margin-top: 0;">Sign in with Google</button>
+                <div id="user-profile" style="display: none; align-items: center; gap: 0.5rem; cursor: pointer;"></div>
+                <button id="logout-btn" style="display: none; background: transparent; border: none; font-size: 0.85rem; color: var(--text-muted); cursor: pointer; text-decoration: underline;">Logout</button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+    <main class="container" id="main-content">
+        <header class="article-header" style="text-align: center; margin-bottom: 2rem;">
+            <h1>Personal Dashboard.</h1>
+            <p class="subtitle">Track your analytical consistency and historical progression.</p>
+        </header>
+
+       <section aria-label="Profile Content">
+            <!-- Unauthenticated State -->
+            <div id="profile-unauth" class="hub-card" style="text-align: center; padding: 4rem 2rem; max-width: 600px; margin: 0 auto; display: none;">
+                <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">Authentication Required</h2>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">Please sign in with Google to view your personal dashboard and historical statistics.</p>
+                <button class="btn" onclick="document.getElementById('login-btn').click()" style="margin: 0 auto;">Sign In</button>
+            </div>
+
+            <!-- Authenticated Profile -->
+            <div id="profile-container" class="hub-card" style="padding: 2.5rem; max-width: 800px; margin: 0 auto 3rem auto; display: none;">
+                
+                <div class="profile-header">
+                    <img id="prof-img" class="profile-avatar" src="" alt="User Avatar" />
+                    <div>
+                        <h2 id="prof-name" style="font-size: 1.75rem; margin-bottom: 0.25rem;">-</h2>
+                        <p id="prof-email" style="color: var(--text-muted); font-family: var(--font-sans);">-</p>
+                    </div>
+                </div>
+
+                <div class="profile-stats-grid">
+                    <div class="stat-card">
+                        <div id="stat-score" class="stat-value">-</div>
+                        <div class="stat-label">Total Score</div>
+                    </div>
+                    <div class="stat-card">
+                        <div id="stat-streak" class="stat-value">-</div>
+                        <div class="stat-label">Current Streak</div>
+                    </div>
+                    <div class="stat-card">
+                        <div id="stat-accuracy" class="stat-value">-</div>
+                        <div class="stat-label">Accuracy</div>
+                    </div>
+                </div>
+
+            </div>
+       </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <nav class="footer-links" aria-label="Legal Navigation">
+                <a href="/about/">About Us</a>
+                <a href="/contact/">Contact</a>
+                <a href="/legal/privacy-policy.html">Privacy Policy</a>
+                <a href="/legal/terms.html">Terms of Service</a>
+                <a href="/legal/disclaimer.html">Disclaimer</a>
+            </nav>
+            <p class="copyright">&copy; 2026 JR Nation. Built for clarity.</p>
+        </div>
+    </footer>
+    
+<script type="module" src="../app.js"></script>
+</body>
+</html>

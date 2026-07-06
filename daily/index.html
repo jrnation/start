@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JR Nation Daily Quiz: Test your knowledge of Indian Polity, History, and Economics with our interactive daily assessments.">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf9f6">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111111">
+    <title>Daily Quiz | JR Nation</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="container site-nav">
+        <div class="logo">
+            <a href="/" aria-label="JR Nation Home">JR Nation.</a>
+        </div>
+        <nav class="nav-links" aria-label="Main Navigation" style="display: flex; align-items: center; gap: 2rem;">
+            <a href="/india/">Polity</a>
+            <a href="/daily/" class="active">Daily Quiz</a>
+            <a href="/leaderboard/">Leaderboard</a>
+            
+            <div class="auth-controls" style="display: flex; align-items: center; gap: 1rem; margin-left: 1rem; padding-left: 1rem; border-left: 1px solid var(--border-color); opacity: 0; pointer-events: none; transition: opacity 0.3s ease;">
+                <button id="login-btn" class="btn" style="padding: 0.4rem 1rem; font-size: 0.85rem; margin-top: 0;">Sign in with Google</button>
+                <div id="user-profile" style="display: none; align-items: center; gap: 0.5rem; cursor: pointer;"></div>
+                <button id="logout-btn" style="display: none; background: transparent; border: none; font-size: 0.85rem; color: var(--text-muted); cursor: pointer; text-decoration: underline;">Logout</button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+    <main class="container" id="main-content">
+        <header class="article-header">
+            <h1>The Daily Assessment.</h1>
+            <p class="subtitle">High-frequency objective testing to expose conceptual gaps in your competitive exam preparation.</p>
+        </header>
+
+       <section aria-label="Daily Quiz Content">
+            <!-- Full-width Quiz App and Strategic Context Section -->
+            <div id="quiz-container" class="quiz-wrapper" style="margin-top: 2rem;">
+                
+                <!-- Dynamic Interactive Component handled by app.js -->
+                <div id="quiz-app" class="hub-card" style="margin-bottom: 2.5rem;">
+                    <div class="skeleton-loader">
+                        <div class="skeleton-line title"></div>
+                        <div class="skeleton-line option"></div>
+                        <div class="skeleton-line option"></div>
+                        <div class="skeleton-line option"></div>
+                    </div>
+                </div>
+                
+                <!-- Rich Text Architecture Content Layer targeting AdSense & SEO Crawler requirements -->
+                <article class="quiz-context" style="padding: 2.5rem; background: var(--bg-surface); border-radius: 16px; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
+                    <h2 style="font-size: 1.75rem; margin-bottom: 0.5rem;">Strategic Baseline: The Role of Daily Evaluation</h2>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-muted);"><strong>By JR Nation Editorial Board</strong></p>
+                    <p style="margin-bottom: 1.5rem; line-height: 1.8;">Comprehensive competitive examinations demand more than simple passive content consumption. Succeeding across dense, analytical syllabi requires high-frequency objective assessment to expose conceptual gaps early. The daily interactive matrix featured above acts as a diagnostic gateway for serious aspirants checking core fundamentals across polity, contemporary governance, and economic principles in real time.</p>
+                    
+                    <h3 style="font-size: 1.35rem; margin-bottom: 1rem; font-family: var(--font-sans); font-weight: 500;">Methodologies for Modern Revision</h3>
+                    <ul style="list-style-type: disc; margin-left: 1.5rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 1.5rem;">
+                        <li><strong>Active Recall Optimization:</strong> Avoid reading raw reference books linearly. Interrogating your brain with specific, contextual problem sets prior to intense study windows forces stronger neuro-retention path formulation.</li>
+                        <li><strong>Systematic Error Analysis:</strong> Incorrect answers provide higher cognitive value than instantaneous successes. Treat failed selections as immediate alerts to revisit your core subject roadmap modules and primary documentation.</li>
+                        <li><strong>Cross-Disciplinary Synthesis:</strong> Never isolate static subjects. Analyze historical policy actions alongside modern constitutional edits and their direct downstream results on current economic metrics.</li>
+                    </ul>
+                    <p style="line-height: 1.8;">All curated resources linked within our specialized internal roadmaps emphasize primary source tracking—prioritizing official legislative acts, official reports, and verifiable data lines over summarized external commentary.</p>
+                </article>
+
+            </div>
+
+       </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <nav class="footer-links" aria-label="Legal Navigation">
+                <a href="/about/">About Us</a>
+                <a href="/contact/">Contact</a>
+                <a href="/legal/privacy-policy.html">Privacy Policy</a>
+                <a href="/legal/terms.html">Terms of Service</a>
+                <a href="/legal/disclaimer.html">Disclaimer</a>
+            </nav>
+            <p class="copyright">&copy; 2026 JR Nation. Built for clarity.</p>
+        </div>
+    </footer>
+    
+<script type="module" src="../app.js"></script>
+</body>
+</html>

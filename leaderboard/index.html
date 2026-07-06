@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JR Nation Global Leaderboard: See who is dominating the Daily Quiz.">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf9f6">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111111">
+    <title>Global Leaderboard | JR Nation</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="container site-nav">
+        <div class="logo">
+            <a href="/" aria-label="JR Nation Home">JR Nation.</a>
+        </div>
+        <nav class="nav-links" aria-label="Main Navigation" style="display: flex; align-items: center; gap: 2rem;">
+            <a href="/india/">Polity</a>
+            <a href="/daily/">Daily Quiz</a>
+            <a href="/leaderboard/" class="active">Leaderboard</a>
+            
+            <div class="auth-controls" style="display: flex; align-items: center; gap: 1rem; margin-left: 1rem; padding-left: 1rem; border-left: 1px solid var(--border-color); opacity: 0; pointer-events: none; transition: opacity 0.3s ease;">
+                <button id="login-btn" class="btn" style="padding: 0.4rem 1rem; font-size: 0.85rem; margin-top: 0;">Sign in with Google</button>
+                <div id="user-profile" style="display: none; align-items: center; gap: 0.5rem; cursor: pointer;"></div>
+                <button id="logout-btn" style="display: none; background: transparent; border: none; font-size: 0.85rem; color: var(--text-muted); cursor: pointer; text-decoration: underline;">Logout</button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+    <main class="container" id="main-content">
+        <header class="article-header" style="text-align: center; margin-bottom: 2rem;">
+            <h1>Global Leaderboard.</h1>
+            <p class="subtitle">The top intellectual aspirants dominating the Daily Assessments across the nation.</p>
+        </header>
+
+       <section aria-label="Leaderboard Content">
+            <div id="leaderboard-container" class="hub-card" style="padding: 2.5rem; background: var(--bg-surface); border-radius: 16px; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); max-width: 800px; margin: 0 auto 3rem auto;">
+                
+                <div id="leaderboard-loading" class="skeleton-loader">
+                    <div class="skeleton-line title" style="width: 50%; margin: 0 auto 2rem auto;"></div>
+                    <div class="skeleton-line option" style="height: 50px; margin-bottom: 1rem;"></div>
+                    <div class="skeleton-line option" style="height: 50px; margin-bottom: 1rem;"></div>
+                    <div class="skeleton-line option" style="height: 50px; margin-bottom: 1rem;"></div>
+                    <div class="skeleton-line option" style="height: 50px; margin-bottom: 1rem;"></div>
+                    <div class="skeleton-line option" style="height: 50px; margin-bottom: 1rem;"></div>
+                </div>
+
+                <div id="leaderboard-table-wrapper" style="display: none;">
+                    <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                        <thead>
+                            <tr style="border-bottom: 2px solid var(--border-color);">
+                                <th style="padding: 1rem 0; font-family: var(--font-sans); color: var(--text-muted); font-weight: 500;">Rank</th>
+                                <th style="padding: 1rem 0; font-family: var(--font-sans); color: var(--text-muted); font-weight: 500;">Aspirant</th>
+                                <th style="padding: 1rem 0; font-family: var(--font-sans); color: var(--text-muted); font-weight: 500; text-align: right;">Total Score</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaderboard-body">
+                            <!-- Populated dynamically via app.js -->
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+       </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <nav class="footer-links" aria-label="Legal Navigation">
+                <a href="/about/">About Us</a>
+                <a href="/contact/">Contact</a>
+                <a href="/legal/privacy-policy.html">Privacy Policy</a>
+                <a href="/legal/terms.html">Terms of Service</a>
+                <a href="/legal/disclaimer.html">Disclaimer</a>
+            </nav>
+            <p class="copyright">&copy; 2026 JR Nation. Built for clarity.</p>
+        </div>
+    </footer>
+    
+<script type="module" src="../app.js"></script>
+</body>
+</html>

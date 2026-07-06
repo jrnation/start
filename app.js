@@ -56,8 +56,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 const firstName = user.displayName ? user.displayName.split(' ')[0] : 'Aspirant';
                 
                 userProfile.innerHTML = `
-                    <img src="${user.photoURL}" alt="Profile" style="width:32px; height:32px; border-radius:50%; border: 2px solid var(--accent);">
-                    <span style="font-weight: 500; font-size: 0.95rem;">${firstName}</span>
+                    <a href="/profile/" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: inherit;">
+                        <img src="${user.photoURL}" alt="Profile" style="width:32px; height:32px; border-radius:50%; border: 2px solid var(--accent);">
+                        <span style="font-weight: 500; font-size: 0.95rem;">${firstName}</span>
+                    </a>
                 `;
             }
             if(logoutBtn) logoutBtn.style.display = 'block';
@@ -338,4 +340,109 @@ class QuizWidget {
             console.error("Network error while saving score:", error);
         }
     }
+}
+
+// ==========================================
+// Leaderboard & Profile Logic
+// ==========================================
+
+async function initLeaderboard() {
+    const tbody = document.getElementById('leaderboard-body');
+    const loading = document.getElementById('leaderboard-loading');
+    const wrapper = document.getElementById('leaderboard-table-wrapper');
+    
+    if (!tbody) return;
+
+    try {
+        // Attempt to fetch from real API, fallback to mock data if it fails (or if not built yet)
+        let data = [];
+        try {
+            const res = await fetch('https://api.jrnation.cc/leaderboard');
+            if (res.ok) {
+                data = await res.json();
+            } else {
+                throw new Error("Backend not ready");
+            }
+        } catch(e) {
+            console.log("Using mock leaderboard data");
+            // Mock Data Fallback
+            await new Promise(resolve => setTimeout(resolve, 800));
+            data = [
+                { rank: 1, name: "Arjun Reddy", score: 1420, img: "https://ui-avatars.com/api/?name=Arjun+Reddy&background=random" },
+                { rank: 2, name: "Priya Sharma", score: 1350, img: "https://ui-avatars.com/api/?name=Priya+Sharma&background=random" },
+                { rank: 3, name: "Vikram Singh", score: 1280, img: "https://ui-avatars.com/api/?name=Vikram+Singh&background=random" },
+                { rank: 4, name: "Anjali Gupta", score: 1150, img: "https://ui-avatars.com/api/?name=Anjali+Gupta&background=random" },
+                { rank: 5, name: "Rahul Patel", score: 1090, img: "https://ui-avatars.com/api/?name=Rahul+Patel&background=random" }
+            ];
+        }
+
+        loading.style.display = 'none';
+        wrapper.style.display = 'block';
+
+        data.forEach(user => {
+            const tr = document.createElement('tr');
+            tr.style.borderBottom = '1px solid var(--border-color)';
+            tr.innerHTML = `
+                <td style="padding: 1rem 0; font-family: var(--font-serif); font-size: 1.25rem;">#${user.rank}</td>
+                <td style="padding: 1rem 0;">
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <img src="${user.img || user.photoUrl}" alt="Avatar" style="width: 40px; height: 40px; border-radius: 50%;">
+                        <span style="font-weight: 500;">${user.name || user.displayName}</span>
+                    </div>
+                </td>
+                <td style="padding: 1rem 0; text-align: right; font-family: var(--font-serif); font-size: 1.25rem; font-weight: 500; color: var(--accent);">${user.score}</td>
+            `;
+            tbody.appendChild(tr);
+        });
+
+    } catch (error) {
+        console.error("Leaderboard Error:", error);
+    }
+}
+
+function initProfile() {
+    const unauthDiv = document.getElementById('profile-unauth');
+    const profileDiv = document.getElementById('profile-container');
+    
+    onAuthStateChanged(auth, async (user) => {
+        if (!user) {
+            unauthDiv.style.display = 'block';
+            profileDiv.style.display = 'none';
+        } else {
+            unauthDiv.style.display = 'none';
+            profileDiv.style.display = 'block';
+            
+            document.getElementById('prof-img').src = user.photoURL;
+            document.getElementById('prof-name').textContent = user.displayName;
+            document.getElementById('prof-email').textContent = user.email;
+
+            try {
+                const token = await user.getIdToken();
+                const res = await fetch(`https://api.jrnation.cc/profile?uid=${user.uid}`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                if (res.ok) {
+                    const data = await res.json();
+                    document.getElementById('stat-score').textContent = data.totalScore || 0;
+                    document.getElementById('stat-streak').textContent = data.currentStreak || 0;
+                    document.getElementById('stat-accuracy').textContent = data.accuracy ? data.accuracy + '%' : '0%';
+                } else {
+                    throw new Error("Backend not ready");
+                }
+            } catch(e) {
+                console.log("Using mock profile data");
+                document.getElementById('stat-score').textContent = "120";
+                document.getElementById('stat-streak').textContent = "14";
+                document.getElementById('stat-accuracy').textContent = "86%";
+            }
+        }
+    });
+}
+
+// Initialize New Pages
+if (document.getElementById('leaderboard-container')) {
+    initLeaderboard();
+}
+if (document.getElementById('profile-container') || document.getElementById('profile-unauth')) {
+    initProfile();
 }
