@@ -150,16 +150,20 @@ class QuizWidget {
                 } catch(e) {}
             }
 
-            let questionIdx;
+            let questionIdx = 0; // Default to the first question for a brand new user
             
-            if (savedState && savedState.date === today) {
-                // Load from state
-                questionIdx = savedState.questionIndex;
-                this.state.selectedIndex = savedState.selectedIndex;
-                this.state.isSubmitted = savedState.isSubmitted;
-            } else {
-                // New day, pick random question
-                questionIdx = Math.floor(Math.random() * questions.length);
+            if (savedState) {
+                if (savedState.date === today) {
+                    // Same day: load exact state
+                    questionIdx = savedState.questionIndex;
+                    this.state.selectedIndex = savedState.selectedIndex;
+                    this.state.isSubmitted = savedState.isSubmitted;
+                } else {
+                    // New day for a returning user: increment their personal index
+                    let prevIdx = savedState.questionIndex !== undefined ? savedState.questionIndex : -1;
+                    questionIdx = (prevIdx + 1) % questions.length;
+                    // Note: selectedIndex and isSubmitted are already null/false from the constructor
+                }
             }
             
             this.state.questionIndex = questionIdx;

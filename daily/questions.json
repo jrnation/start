@@ -9,5 +9,445 @@
     ],
     "answer": 1,
     "explanation": "In the 1973 Kesavananda Bharati case, the Supreme Court ruled that while Parliament has wide powers to amend the Constitution, it cannot alter or destroy its 'basic structure'."
+  },
+  {
+    "question": "Under which Article of the Constitution can the President of India declare a National Emergency?",
+    "options": [
+      "Article 352",
+      "Article 356",
+      "Article 360",
+      "Article 365"
+    ],
+    "answer": 0,
+    "explanation": "Article 352 empowers the President to declare a National Emergency in case of war, external aggression, or armed rebellion."
+  },
+  {
+    "question": "Which Schedule of the Indian Constitution deals with the Anti-Defection Law?",
+    "options": [
+      "Eighth Schedule",
+      "Ninth Schedule",
+      "Tenth Schedule",
+      "Eleventh Schedule"
+    ],
+    "answer": 2,
+    "explanation": "The Tenth Schedule, added by the 52nd Amendment in 1985, lays down the process by which legislators may be disqualified on grounds of defection."
+  },
+  {
+    "question": "Who is the ex-officio Chairman of the Rajya Sabha?",
+    "options": [
+      "The President of India",
+      "The Vice-President of India",
+      "The Prime Minister",
+      "The Speaker of the Lok Sabha"
+    ],
+    "answer": 1,
+    "explanation": "According to Article 64, the Vice-President of India serves as the ex-officio Chairman of the Council of States (Rajya Sabha)."
+  },
+  {
+    "question": "Which part of the Constitution contains the Directive Principles of State Policy?",
+    "options": [
+      "Part III",
+      "Part IV",
+      "Part IVA",
+      "Part V"
+    ],
+    "answer": 1,
+    "explanation": "Part IV (Articles 36-51) contains the Directive Principles of State Policy, which are non-justiciable guidelines for the government."
+  },
+  {
+    "question": "The concept of 'Concurrent List' in the Indian Constitution was borrowed from the constitution of which country?",
+    "options": [
+      "USA",
+      "Canada",
+      "Australia",
+      "UK"
+    ],
+    "answer": 2,
+    "explanation": "The idea of the Concurrent List, where both the Centre and the States can make laws, was borrowed from the Australian Constitution."
+  },
+  {
+    "question": "By which Amendment Act were the 'Fundamental Duties' added to the Constitution?",
+    "options": [
+      "42nd Amendment Act, 1976",
+      "44th Amendment Act, 1978",
+      "86th Amendment Act, 2002",
+      "73rd Amendment Act, 1992"
+    ],
+    "answer": 0,
+    "explanation": "The 42nd Amendment Act of 1976 added Part IVA (Article 51A) laying down 10 Fundamental Duties for citizens, based on the Swaran Singh Committee's recommendations."
+  },
+  {
+    "question": "Which Article provides the Right to Constitutional Remedies, famously called the 'heart and soul of the Constitution' by Dr. B.R. Ambedkar?",
+    "options": [
+      "Article 14",
+      "Article 21",
+      "Article 32",
+      "Article 226"
+    ],
+    "answer": 2,
+    "explanation": "Article 32 allows citizens to approach the Supreme Court directly for the enforcement of their Fundamental Rights through writs."
+  },
+  {
+    "question": "What is the maximum gap allowed between two sessions of Parliament?",
+    "options": [
+      "3 months",
+      "4 months",
+      "6 months",
+      "1 year"
+    ],
+    "answer": 2,
+    "explanation": "Article 85 mandates that the President shall summon each House of Parliament such that six months shall not intervene between its last sitting in one session and its first sitting in the next."
+  },
+  {
+    "question": "Who appoints the Chief Election Commissioner of India?",
+    "options": [
+      "The Chief Justice of India",
+      "The President",
+      "The Parliament",
+      "The Prime Minister"
+    ],
+    "answer": 1,
+    "explanation": "Article 324 states that the appointment of the Chief Election Commissioner and other Election Commissioners shall be made by the President."
+  },
+  {
+    "question": "Which writ literally translates to 'We Command'?",
+    "options": [
+      "Habeas Corpus",
+      "Mandamus",
+      "Certiorari",
+      "Quo Warranto"
+    ],
+    "answer": 1,
+    "explanation": "Mandamus translates to 'We Command'. It is a writ issued by a court to a public official asking them to perform their official duties."
+  },
+  {
+    "question": "The power of Judicial Review in India is vested in:",
+    "options": [
+      "The Supreme Court only",
+      "The High Courts only",
+      "Both Supreme Court and High Courts",
+      "The President"
+    ],
+    "answer": 2,
+    "explanation": "Both the Supreme Court (under Article 32 and 136) and the High Courts (under Article 226) have the power of judicial review to strike down unconstitutional laws."
+  },
+  {
+    "question": "How many members can the President nominate to the Rajya Sabha?",
+    "options": [
+      "2",
+      "10",
+      "12",
+      "14"
+    ],
+    "answer": 2,
+    "explanation": "Under Article 80, the President can nominate 12 members to the Rajya Sabha who have special knowledge in literature, science, art, or social service."
+  },
+  {
+    "question": "A Money Bill can be introduced in:",
+    "options": [
+      "Only the Lok Sabha",
+      "Only the Rajya Sabha",
+      "Either House of Parliament",
+      "A joint sitting of both Houses"
+    ],
+    "answer": 0,
+    "explanation": "Article 109 strictly dictates that a Money Bill shall not be introduced in the Council of States (Rajya Sabha). It must originate in the Lok Sabha."
+  },
+  {
+    "question": "The Panchayati Raj system was given constitutional status by which amendment?",
+    "options": [
+      "71st Amendment",
+      "72nd Amendment",
+      "73rd Amendment",
+      "74th Amendment"
+    ],
+    "answer": 2,
+    "explanation": "The 73rd Amendment Act, 1992 added Part IX to the Constitution, formalizing the Panchayati Raj system at the village, intermediate, and district levels."
+  },
+  {
+    "question": "Who has the power to pardon a death sentence in India?",
+    "options": [
+      "Only the President",
+      "Only the Governor",
+      "Both the President and Governor",
+      "The Chief Justice of India"
+    ],
+    "answer": 0,
+    "explanation": "Under Article 72, the President has the exclusive power to pardon, commute, or remit a death sentence. A Governor cannot pardon a death sentence."
+  },
+  {
+    "question": "Which of the following is NOT a Fundamental Right?",
+    "options": [
+      "Right to Equality",
+      "Right to Property",
+      "Right to Freedom of Religion",
+      "Right against Exploitation"
+    ],
+    "answer": 1,
+    "explanation": "The Right to Property was removed from the list of Fundamental Rights by the 44th Amendment in 1978 and made a legal right under Article 300A."
+  },
+  {
+    "question": "Who is the ultimate guardian of the Public Purse in India?",
+    "options": [
+      "The Finance Minister",
+      "The Reserve Bank of India",
+      "The Comptroller and Auditor General (CAG)",
+      "The NITI Aayog"
+    ],
+    "answer": 2,
+    "explanation": "The CAG audits all receipts and expenditure of the Government of India and the state governments, ensuring public money is spent properly."
+  },
+  {
+    "question": "The concept of 'Procedure Established by Law' in Article 21 was borrowed from:",
+    "options": [
+      "British Constitution",
+      "American Constitution",
+      "Japanese Constitution",
+      "Irish Constitution"
+    ],
+    "answer": 2,
+    "explanation": "While 'Due Process of Law' is an American concept, the specific phrase 'Procedure Established by Law' was borrowed from the Japanese Constitution."
+  },
+  {
+    "question": "To become a Member of the Lok Sabha, the minimum age required is:",
+    "options": [
+      "18 years",
+      "21 years",
+      "25 years",
+      "30 years"
+    ],
+    "answer": 2,
+    "explanation": "Article 84 states that a person must be at least 25 years old to be chosen for the Lok Sabha, and 30 years old for the Rajya Sabha."
+  },
+  {
+    "question": "Which Article guarantees the abolition of Untouchability?",
+    "options": [
+      "Article 15",
+      "Article 16",
+      "Article 17",
+      "Article 18"
+    ],
+    "answer": 2,
+    "explanation": "Article 17 abolishes 'Untouchability' and forbids its practice in any form, making it a punishable offense."
+  },
+  {
+    "question": "If the President wishes to resign, to whom must he address his resignation letter?",
+    "options": [
+      "The Chief Justice of India",
+      "The Prime Minister",
+      "The Vice-President",
+      "The Speaker of Lok Sabha"
+    ],
+    "answer": 2,
+    "explanation": "Under Article 56, the President may resign from his office by writing under his hand addressed to the Vice-President."
+  },
+  {
+    "question": "The Goods and Services Tax (GST) was introduced via which Constitutional Amendment Act?",
+    "options": [
+      "99th Amendment",
+      "100th Amendment",
+      "101st Amendment",
+      "102nd Amendment"
+    ],
+    "answer": 2,
+    "explanation": "The 101st Amendment Act, 2016 overhauled India's indirect tax structure by introducing the GST and creating the GST Council under Article 279A."
+  },
+  {
+    "question": "What is the quorum required to hold a meeting of either House of Parliament?",
+    "options": [
+      "One-fifth of the total membership",
+      "One-tenth of the total membership",
+      "One-half of the total membership",
+      "50 members"
+    ],
+    "answer": 1,
+    "explanation": "Article 100 sets the quorum at one-tenth (10%) of the total number of members of the House."
+  },
+  {
+    "question": "Which of the following bodies is NOT established directly by the Constitution?",
+    "options": [
+      "Finance Commission",
+      "Election Commission",
+      "Union Public Service Commission",
+      "National Human Rights Commission"
+    ],
+    "answer": 3,
+    "explanation": "The NHRC is a statutory body created by an Act of Parliament in 1993, whereas the other three are constitutional bodies directly created by specific Articles."
+  },
+  {
+    "question": "Article 370, which gave special status to Jammu & Kashmir, was functionally inoperative since:",
+    "options": [
+      "1999",
+      "2014",
+      "2019",
+      "2021"
+    ],
+    "answer": 2,
+    "explanation": "On August 5, 2019, the President issued an order under Article 370(1) which effectively abrogated the special status of J&K."
+  },
+  {
+    "question": "The resolution to remove the Vice-President of India can only be introduced in:",
+    "options": [
+      "The Lok Sabha",
+      "The Rajya Sabha",
+      "A Joint Sitting",
+      "The Supreme Court"
+    ],
+    "answer": 1,
+    "explanation": "Because the Vice-President is the Chairman of the Rajya Sabha, Article 67 dictates that a removal resolution can only originate in the Council of States (Rajya Sabha)."
+  },
+  {
+    "question": "Which amendment lowered the voting age in India from 21 to 18 years?",
+    "options": [
+      "42nd Amendment",
+      "44th Amendment",
+      "61st Amendment",
+      "73rd Amendment"
+    ],
+    "answer": 2,
+    "explanation": "The 61st Amendment Act, 1988 amended Article 326 to lower the voting age to 18 years."
+  },
+  {
+    "question": "Who administers the oath of office to the President of India?",
+    "options": [
+      "The outgoing President",
+      "The Prime Minister",
+      "The Chief Justice of India",
+      "The Speaker of the Lok Sabha"
+    ],
+    "answer": 2,
+    "explanation": "Article 60 states that every President shall take an oath administered by the Chief Justice of India, or in his absence, the senior-most Judge of the Supreme Court."
+  },
+  {
+    "question": "According to the Constitution, what is the maximum number of judges the Supreme Court can have?",
+    "options": [
+      "31",
+      "34",
+      "Set by Parliament",
+      "Set by the President"
+    ],
+    "answer": 2,
+    "explanation": "Article 124 originally set the number at 7 plus the CJI, but left it to Parliament to increase it by law. Parliament recently increased the sanctioned strength to 34 (including CJI)."
+  },
+  {
+    "question": "Which of these languages is NOT currently listed in the Eighth Schedule?",
+    "options": [
+      "Sanskrit",
+      "Dogri",
+      "English",
+      "Maithili"
+    ],
+    "answer": 2,
+    "explanation": "Despite being an official language of the Union, English is interestingly NOT included in the 22 languages of the Eighth Schedule."
+  },
+  {
+    "question": "The concept of 'Public Interest Litigation' (PIL) originated in:",
+    "options": [
+      "United Kingdom",
+      "India",
+      "United States",
+      "Australia"
+    ],
+    "answer": 2,
+    "explanation": "While famously popularized in India by Justices P.N. Bhagwati and V.R. Krishna Iyer, the concept of PIL originally developed in the United States."
+  },
+  {
+    "question": "If a State Government refuses to enforce a Central Law, the Centre can impose President's Rule under:",
+    "options": [
+      "Article 352",
+      "Article 356 directly",
+      "Article 365 leading to 356",
+      "Article 360"
+    ],
+    "answer": 2,
+    "explanation": "Article 365 states that if a state fails to comply with directions given by the Union, it is lawful for the President to hold that the state government cannot be carried on in accordance with the Constitution, triggering Article 356."
+  },
+  {
+    "question": "What is the maximum duration for which a President's Rule (Article 356) can remain in force in a state?",
+    "options": [
+      "6 months",
+      "1 year",
+      "3 years",
+      "5 years"
+    ],
+    "answer": 2,
+    "explanation": "With parliamentary approvals every 6 months, President's Rule can be extended, but the absolute maximum constitutional limit is 3 years."
+  },
+  {
+    "question": "Who decides whether a bill is a Money Bill or not?",
+    "options": [
+      "The President",
+      "The Finance Minister",
+      "The Speaker of the Lok Sabha",
+      "The Chairman of the Rajya Sabha"
+    ],
+    "answer": 2,
+    "explanation": "Under Article 110(3), if any question arises whether a Bill is a Money Bill, the decision of the Speaker of the House of the People (Lok Sabha) shall be final."
+  },
+  {
+    "question": "A person cannot be forced to be a witness against themselves. This protection against self-incrimination is found in:",
+    "options": [
+      "Article 20(1)",
+      "Article 20(2)",
+      "Article 20(3)",
+      "Article 22"
+    ],
+    "answer": 2,
+    "explanation": "Article 20(3) explicitly states: 'No person accused of any offence shall be compelled to be a witness against himself.'"
+  },
+  {
+    "question": "Under the Right to Information (RTI) Act, which fundamental right is being practically exercised?",
+    "options": [
+      "Right to Equality (Art 14)",
+      "Right to Freedom of Speech and Expression (Art 19(1)(a))",
+      "Right to Life (Art 21)",
+      "Right to Constitutional Remedies (Art 32)"
+    ],
+    "answer": 1,
+    "explanation": "The Supreme Court has held that the Right to Information is implicitly guaranteed by Article 19(1)(a) because you cannot express yourself freely without knowing the facts."
+  },
+  {
+    "question": "Which committee recommended the inclusion of Fundamental Duties?",
+    "options": [
+      "Kothari Commission",
+      "Sarkaria Commission",
+      "Swaran Singh Committee",
+      "Punchhi Commission"
+    ],
+    "answer": 2,
+    "explanation": "The Swaran Singh Committee was set up during the 1976 Emergency to make recommendations on constitutional amendments, leading to the 42nd Amendment."
+  },
+  {
+    "question": "The 'Joint Sitting' of both Houses of Parliament to resolve a deadlock over a bill is presided over by:",
+    "options": [
+      "The President",
+      "The Vice-President",
+      "The Speaker of the Lok Sabha",
+      "The Prime Minister"
+    ],
+    "answer": 2,
+    "explanation": "Under Article 118, the Speaker of the Lok Sabha presides over a joint sitting of the two Houses."
+  },
+  {
+    "question": "Which of the following taxes is exclusively levied AND collected by the State Governments?",
+    "options": [
+      "Income Tax",
+      "Customs Duty",
+      "Stamp duty on Bills of Exchange",
+      "Tolls"
+    ],
+    "answer": 3,
+    "explanation": "Tolls are firmly in the State List. Income and Customs are Union. Stamp duty on bills of exchange is levied by the Union but collected by States (Art 268)."
+  },
+  {
+    "question": "How many times has a Financial Emergency (Article 360) been declared in India?",
+    "options": [
+      "Never",
+      "Once (in 1991)",
+      "Twice",
+      "Three times"
+    ],
+    "answer": 0,
+    "explanation": "Despite severe economic crises like the 1991 Balance of Payments crisis, a Financial Emergency under Article 360 has never been declared in India."
   }
 ]
