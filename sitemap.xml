@@ -36,12 +36,22 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://jrnation.cc/current-affairs/</loc>
+    <lastmod>2026-07-14</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://jrnation.cc/about/</loc>
     <lastmod>2026-07-14</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://jrnation.cc/leaderboard/</loc>
+    <lastmod>2026-07-14</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jrnation.cc/law/</loc>
     <lastmod>2026-07-14</lastmod>
     <priority>0.8</priority>
   </url>
@@ -119,6 +129,11 @@
     <loc>https://jrnation.cc/india/judiciary.html</loc>
     <lastmod>2026-07-14</lastmod>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://jrnation.cc/geography/</loc>
+    <lastmod>2026-07-14</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jrnation.cc/contact/</loc>
